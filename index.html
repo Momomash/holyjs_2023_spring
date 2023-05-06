@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="dist/reset.css" />
         <link rel="stylesheet" href="dist/reveal.css" />
         <link rel="stylesheet" href="dist/theme/dracula.css" />
+        <link rel="stylesheet" href="custom_styles.css" />
 
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" />
@@ -89,14 +90,113 @@
                     </ul>
                 </section>
                 <!--конец вступления-->
-                <!--Автостопом по стандартами -->
-                <section>
-                    <h2 class="r-fit-text">
-                        Кто и как развивает JavaScript и Web?
-                    </h2>
-                    <img src="img/gosh.png" width="400" alt="gosh" />
-                </section>
+
                 <!--Автостопом по стандартами start -->
+                <!--Автостопом по стандартами end -->
+
+                <!--Proposals start-->
+                <section>
+                    <h3>Что мы увидим в ECMAScript 2023</h3>
+                </section>
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-symbols-as-weakmap-keys"
+                                >proposal-symbols-as-weakmap-keys</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>Map</td>
+                                    <td>WeakMap</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Тип ключа</td>
+                                    <td><p>Any</p></td>
+                                    <td><p>Object</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>Препятствует сборке мусора?</p></td>
+                                    <td><p>true</p></td>
+                                    <td>
+                                        <p style="color: greenyellow">false</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section style="text-align: left">
+                        <pre>
+                    <code class="javascript"  data-trim data-noescape data-line-numbers="1|2-3|5">
+                        let primarch = {name: 'Horus'};
+                        const weakMap = new WeakMap([[primarch, 'traitor']]);
+                        primarch = null;
+
+                        console.log(weakMap.get(primarch))  // undefined
+                    </code>
+                        </pre>
+
+                        <div class="fragment custom blur">
+                            <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1|2-5|7">
+                                let primarch = {name: 'Horus'};
+                                const map = new Map();
+                                map.set({'primarch': primarch});
+
+                                primarch = null;
+
+                                map.get('primarch') // {name: 'Horus'}
+                            </code>
+                        </pre>
+                        </div>
+                        <aside class="notes">
+                            В конце: Для чего можно использовать WeakMap?
+                            Например, чтобы хранить временные данные.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>Map</td>
+                                    <td>WeakMap</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Тип ключа</td>
+                                    <td><p>Any</p></td>
+                                    <td>
+                                        <p style="white-space: nowrap">
+                                            Object,
+                                            <span style="color: greenyellow"
+                                                >Symbol</span
+                                            >
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p>Препятствует сборке мусора?</p></td>
+                                    <td><p>true</p></td>
+                                    <td>false</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <!--Proposals end-->
+
                 <!-- end-->
 
                 <section>
