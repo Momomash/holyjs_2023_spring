@@ -1,40 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
 
-		<title>reveal.js</title>
+        <title>Что нового в JS и вебе</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/dracula.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!--Вступление-->
+                <section style="text-align: left">
+                    <h2>Что нового в JS и вебе</h2>
+                    <br />
+                    <div
+                        style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        "
+                    >
+                        <img
+                            src="img/me.png"
+                            width="120"
+                            alt="Мария Кондаурова"
+                            style="border-radius: 50%; border: 5px solid white"
+                        />
+                        <div
+                            style="
+                                margin-left: 30px;
+                                display: flex;
+                                flex-direction: column;
+                            "
+                        >
+                            <b>Мария Кондаурова</b>
+                            <small>BIOCAD</small>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Обо мне</h3>
+                    <div style="display: flex; flex-direction: row">
+                        <img
+                            src="img/me.png"
+                            width="250"
+                            alt="Мария Кондаурова"
+                            style="
+                                border-radius: 50%;
+                                border: 5px solid white;
+                                margin-right: 50px;
+                            "
+                        />
+                        <ul>
+                            <li>Начинала с верстки за еду</li>
+                            <li>
+                                Поработала в российском аутсорсе и американском
+                                энтерпрайзе
+                            </li>
+                            <li><s>Душевно</s> душно ревьюю</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <img src="img/biocad.png" alt="Biocad" />
+                </section>
+                <section style="text-align: left">
+                    <h3>О чем расскажу</h3>
+                    <ul>
+                        <li>Автостопом по стандартам</li>
+                        <li>
+                            Пропоузалы:
+                            <ul style="list-style: none">
+                                <li>Что мы увидим в ECMAScript 2023</li>
+                                <li>Что мы увидим еще, но позже</li>
+                            </ul>
+                        </li>
+                        <li>Новые Web API</li>
+                    </ul>
+                </section>
+                <!--конец вступления-->
+                <!--Автостопом по стандартами -->
+                <section>
+                    <h2 class="r-fit-text">
+                        Кто и как развивает JavaScript и Web?
+                    </h2>
+                    <img src="img/gosh.png" width="400" alt="gosh" />
+                </section>
+                <!--Автостопом по стандартами start -->
+                <!-- end-->
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+                <section>
+                    <table>
+                        <tr>
+                            <td>telegram</td>
+                            <td>@Momomash</td>
+                        </tr>
+                        <tr>
+                            <td>github</td>
+                            <td>@Momomash</td>
+                        </tr>
+                        <tr>
+                            <td>twitter</td>
+                            <td>@mari_momos</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </div>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                transition: 'none',
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            })
+        </script>
+    </body>
 </html>
