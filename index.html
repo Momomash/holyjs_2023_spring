@@ -95,7 +95,6 @@
                 <!--Автостопом по стандартами end -->
 
                 <!--Proposals start-->
-
                 <section>
                     <h3>Что мы увидим в ECMAScript 2023</h3>
                 </section>
@@ -272,6 +271,84 @@
                         </table>
                     </section>
                 </section>
+                <!-- proposal-change-array-by-copy -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-change-array-by-copy"
+                                target="_blank"
+                                >proposal-change-array-by-copy</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+                                text-align: left;
+                            "
+                        >
+                            <div>
+                                .reverse() <br />
+                                .sort() <br />
+                                .splice()
+                            </div>
+                            <div class="fragment fade-in">
+                                <span style="color: red">[...array]</span
+                                >.reverse() <br />
+                                <span style="color: red">[...array]</span
+                                >.sort() <br />
+                                <span style="color: red">[...array]</span
+                                >.splice()
+                            </div>
+                            <div class="fragment fade-in">
+                                .toReversed() <br />
+                                .toSorted() <br />
+                                .toSpliced()
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <b style="color: greenyellow">.with</b>(index, value) ->
+                        Array
+                        <div class="fragment fade-in" style="margin-top: 30px">
+                            <pre>
+                                <code class="javascript"  data-trim data-noescape data-line-numbers="1|3|5">
+                                    const array = [1,2,3];
+
+                                    array.with(2,10); // => [1,10,3]
+
+                                    console.log(array); // => [1,2,3]
+                                </code>
+                            </pre>
+                        </div>
+                    </section>
+                </section>
+
+                <!--Proposals end-->
+
+                <!-- end-->
+
+                <!--                    <section>-->
+                <!--                        <table>-->
+                <!--                            <tr>-->
+                <!--                                <td>telegram</td>-->
+                <!--                                <td>@Momomash</td>-->
+                <!--                            </tr>-->
+                <!--                            <tr>-->
+                <!--                                <td>github</td>-->
+                <!--                                <td>@Momomash</td>-->
+                <!--                            </tr>-->
+                <!--                            <tr>-->
+                <!--                                <td>twitter</td>-->
+                <!--                                <td>@mari_momos</td>-->
+                <!--                            </tr>-->
+                <!--                        </table>-->
+                <!--                    </section>-->
             </div>
         </div>
 
