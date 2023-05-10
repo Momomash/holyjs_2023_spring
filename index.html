@@ -95,14 +95,17 @@
                 <!--Автостопом по стандартами end -->
 
                 <!--Proposals start-->
+
                 <section>
                     <h3>Что мы увидим в ECMAScript 2023</h3>
                 </section>
+                <!-- proposal-symbols-as-weakmap-keys-->
                 <section>
                     <section>
                         <h3>
                             <a
                                 href="https://github.com/tc39/proposal-symbols-as-weakmap-keys"
+                                target="_blank"
                                 >proposal-symbols-as-weakmap-keys</a
                             >
                         </h3>
@@ -194,26 +197,80 @@
                         </table>
                     </section>
                 </section>
-
-                <!--Proposals end-->
-
-                <!-- end-->
-
+                <!-- proposal-array-find-from-last -->
                 <section>
-                    <table>
-                        <tr>
-                            <td>telegram</td>
-                            <td>@Momomash</td>
-                        </tr>
-                        <tr>
-                            <td>github</td>
-                            <td>@Momomash</td>
-                        </tr>
-                        <tr>
-                            <td>twitter</td>
-                            <td>@mari_momos</td>
-                        </tr>
-                    </table>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-array-find-from-last"
+                                target="_blank"
+                                >proposal-array-find-from-last</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <section style="text-align: left">
+                            <pre>
+                     <!-- TODO: подставить настоящие данные -->
+                    <code class="javascript"  data-trim data-noescape>
+                       let games = [
+                        {author: 'author1', title: 'title1', year: 2019},
+                        {author: 'author2', title: 'title2', year: 2020},
+                        {author: 'author1', title: 'title3', year: 2021},
+                        {author: 'author2', title: 'title4', year: 2022},
+                        ]
+                    </code>
+                        </pre>
+                            <div class="fragment fade-in">
+                                <pre>
+                                     <code class="javascript"  data-trim data-noescape data-line-numbers="0|1,5">
+                                        const game = [...games].reverse().find(
+                                            ({author}) => author === 'author1'
+                                         );
+
+                                        const indexOfGame = games.length - 1 - [...games].reverse()
+                                         .findIndex(
+                                            ({author}) => author === 'author1'
+                                         );
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="fragment fade-in">
+                                <pre>
+                                     <code class="javascript"  data-trim data-noescape>
+                                        const game = games.findLast(
+                                            ({author}) => author === 'author1'
+                                         );
+
+                                        const indexOfGame = games.findLastIndex(
+                                            ({author}) => author === 'author1'
+                                         );
+                                    </code>
+                                </pre>
+                            </div>
+                        </section>
+                    </section>
+
+                    <!--Proposals end-->
+
+                    <!-- end-->
+
+                    <section>
+                        <table>
+                            <tr>
+                                <td>telegram</td>
+                                <td>@Momomash</td>
+                            </tr>
+                            <tr>
+                                <td>github</td>
+                                <td>@Momomash</td>
+                            </tr>
+                            <tr>
+                                <td>twitter</td>
+                                <td>@mari_momos</td>
+                            </tr>
+                        </table>
+                    </section>
                 </section>
             </div>
         </div>
