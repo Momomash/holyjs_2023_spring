@@ -329,6 +329,111 @@
                     </section>
                 </section>
 
+                <section>
+                    <h3>Что мы увидим, но позже</h3>
+                </section>
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-array-grouping"
+                                target="_blank"
+                                >Stage 3 - proposal-array-grouping</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-11|13-15">
+                                type Primarch = { name: string, isLoyal: string };
+
+                                const primarchs: Primarch[] = [
+                                    { name: 'Horus', isLoyal: false },
+                                    { name: 'Leman Russ', isLoyal: true },
+                                    { name: 'Magnus the Red', isLoyal: true },
+                                    { name: 'Mortarion', isLoyal: false },
+                                    { name: 'Lion El Jonson', isLoyal: false },
+                                    { name: 'Conrad Curze', isLoyal: false },
+                                    { name: 'Corvus Corax', isLoyal: true },
+                                ];
+
+                                type GroupedPrimarchs = {
+                                    loyal: Primarch[], traitor: Primarch[]
+                                };
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape>
+                                const groupedPrimarchs = primarchs.reduce(
+                                    (acc, primarch) => {
+                                        primarch.isLoyal ? acc.loyal = [...acc.loyal, primarch]
+                                        : acc.traitor = [...acc.traitor, primarch];
+                                        return acc;
+                                    },
+                                    {loyal: [], traitor: []}
+                                );
+                            </code>
+                        </pre>
+                        <pre class="fragment fade-in">
+                            <code class="typescript"  data-trim data-noescape data-line-numbers="1|3-7|8-13">
+                                // src/utils/groupByField.ts
+
+                                const groupByField = (
+                                    array: T[],
+                                    callback: (item: T) => boolean,
+                                    trueField: string,
+                                    falseField: string
+                                ) => array.reduce(
+                                            (acc, item) => {
+                                                callback(item) ? acc[trueField] = [...acc[trueField], item]
+                                                : acc[falseField] = [...acc[falseField], item];
+                                            }
+                                        );
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h4 class="r-fit-text">Можно ли сделать лучше?</h4>
+                    </section>
+                    <section>
+                        <h4 class="r-fit-text" style="margin-bottom: 50px">
+                            Новые методы:
+                        </h4>
+                        Array<b style="color: greenyellow">.group()</b>
+                        <br />
+                        Array<b style="color: greenyellow">.groupToMap()</b>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|3">
+                                  const groupedPrimarch = primarchs.group(
+                                    (item, array, index) => 
+                                        item.isLoyal ? 'loyal' : 'traitor';
+                                  )
+                                  // => { loyal: [ { name: 'Leman Russ', isLoyal: true },...],
+                                  //        traitor: [ { name: 'Horus', isLoyal: false },...]
+                                  //     }
+                              </code>
+                        </pre>
+                        <pre class="fragment fade-in">
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|4-6|8-9">
+                                  const loyal = {loyal: true};
+                                  const traitor = {traitor: true};
+
+                                  const primarchsMap = primarchs.groupToMap(
+                                      (item, array, index) => item.isLoyal ? loyal : traitor;
+                                  ) // => Map
+
+                                  primarchsMap.get(loyal) // => [ { name: 'Leman Russ', isLoyal: true },...];
+                                  primarchsMap.get(traitor) // => [ { name: 'Horus', isLoyal: false },...];
+
+                              </code>
+                        </pre>
+                    </section>
+                </section>
+
                 <!--Proposals end-->
 
                 <!-- end-->
