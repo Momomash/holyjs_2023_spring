@@ -220,7 +220,7 @@
                         ]
                     </code>
                         </pre>
-                            <div class="fragment fade-in">
+                            <div class="fragment">
                                 <pre>
                                      <code class="javascript"  data-trim data-noescape data-line-numbers="0|1,5">
                                         const game = [...games].reverse().find(
@@ -234,7 +234,7 @@
                                     </code>
                                 </pre>
                             </div>
-                            <div class="fragment fade-in">
+                            <div class="fragment">
                                 <pre>
                                      <code class="javascript"  data-trim data-noescape>
                                         const game = games.findLast(
@@ -297,7 +297,7 @@
                                 .sort() <br />
                                 .splice()
                             </div>
-                            <div class="fragment fade-in">
+                            <div class="fragment">
                                 <span style="color: red">[...array]</span
                                 >.reverse() <br />
                                 <span style="color: red">[...array]</span
@@ -305,7 +305,7 @@
                                 <span style="color: red">[...array]</span
                                 >.splice()
                             </div>
-                            <div class="fragment fade-in">
+                            <div class="fragment">
                                 .toReversed() <br />
                                 .toSorted() <br />
                                 .toSpliced()
@@ -315,7 +315,7 @@
                     <section>
                         <b style="color: greenyellow">.with</b>(index, value) ->
                         Array
-                        <div class="fragment fade-in" style="margin-top: 30px">
+                        <div class="fragment" style="margin-top: 30px">
                             <pre>
                                 <code class="javascript"  data-trim data-noescape data-line-numbers="1|3|5">
                                     const array = [1,2,3];
@@ -377,7 +377,7 @@
                                 );
                             </code>
                         </pre>
-                        <pre class="fragment fade-in">
+                        <pre class="fragment">
                             <code class="typescript"  data-trim data-noescape data-line-numbers="1|3-7|8-13">
                                 // src/utils/groupByField.ts
 
@@ -418,7 +418,7 @@
                                   //     }
                               </code>
                         </pre>
-                        <pre class="fragment fade-in">
+                        <pre class="fragment">
                               <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|4-6|8-9">
                                   const loyal = {loyal: true};
                                   const traitor = {traitor: true};
@@ -459,12 +459,12 @@
                         <img
                             src="img/reg/reg2.png"
                             alt="ошибка повторяющихся групп в регулярном выражении"
-                            class="fragment fade-in"
+                            class="fragment"
                         />
                         <img
                             src="img/reg/reg3.png"
                             alt="регулярное выражение с разными названиями групп"
-                            class="fragment fade-in"
+                            class="fragment"
                         />
                     </section>
                     <section>
@@ -500,7 +500,7 @@
                          </pre>
                         <blockquote
                             style="color: red; font-style: normal"
-                            class="fragment fade-in"
+                            class="fragment"
                         >
                             Failed to load module script: Expected a JavaScript
                             module script but the server responded with a MIME
@@ -525,7 +525,7 @@
                                  )
                             </code>
                          </pre>
-                        <pre class="fragment fade-in">
+                        <pre class="fragment">
                              <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
                                 new Worker('app.wasm', {
                                     type: 'module',
@@ -535,7 +535,205 @@
                          </pre>
                     </section>
                 </section>
+                <!-- proposal-record-tuple -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-record-tuple"
+                                target="_blank"
+                                >Stage 2 -<br />
+                                proposal-record-tuple</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <h3>8 основных типов в JavaScript:</h3>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                            "
+                        >
+                            <table>
+                                <tr>
+                                    <td>Number</td>
+                                </tr>
+                                <tr>
+                                    <td>BigInit</td>
+                                </tr>
+                                <tr>
+                                    <td>String</td>
+                                </tr>
+                                <tr>
+                                    <td>Boolean</td>
+                                </tr>
+                                <tr>
+                                    <td>Null</td>
+                                </tr>
+                                <tr>
+                                    <td>Undefined</td>
+                                </tr>
+                                <tr>
+                                    <td>Symbol</td>
+                                </tr>
+                                <tr>
+                                    <td>Object</td>
+                                </tr>
+                            </table>
 
+                            <b class="fragment">+</b>
+
+                            <table style="color: greenyellow" class="fragment">
+                                <tr>
+                                    <td>Record</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuple</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
+                                  let game = #{
+                                    name: 'Age of Sigmar',
+                                    tags: #['wargame', 'Games Workshop', 'Fantasy']
+                                  };
+                                  
+                                  let alliances = #['Order', 'Chaos', 'Death', 'Destruction'];
+                              </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="4" >
+                                    let game = #{
+                                        name: 'Age of Sigmar',
+                                        tags: #['wargame', 'Games Workshop', 'Fantasy'],
+                                        stores: {anyKey: 'any Value'}
+                                    };
+                              </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "TypeError: cannot use an object as a value in a
+                            record"
+                        </blockquote>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape >
+                                let alliances = #['Order', {anyKey: 'any Value'}];
+                            </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "TypeError: cannot use an object as a value in a
+                            tuple"
+                        </blockquote>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="6" >
+                                    let game = #{
+                                        name: 'Age of Sigmar',
+                                        tags: #['wargame', 'Games Workshop', 'Fantasy'],
+                                    };
+
+                                    game.name = 'Warhammer';
+                              </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "Cannot assign to read only property 'name' of
+                            object '[object Object]'"
+                        </blockquote>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3" >
+                                let alliances = #['Order', 'Chaos', 'Death', 'Destruction'];
+
+                                alliances[0] = 'Any Text';
+                            </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "Cannot assign to read only property '0' of object
+                            '[object Tuple]'"
+                        </blockquote>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
+                                const game = { name: 'Warhammer' };
+
+                                console.log(game === { name: 'Warhammer' }); // false;
+                            </code>
+                        </pre>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape >
+                                console.log(
+                                    JSON.stringify(game) === JSON.stringify({ name: 'Warhammer' })
+                                ); // true;
+                            </code>
+                        </pre>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape >
+                                const game1 = { name: 'Age of Sigmar', company: 'Games Workshop' };
+                                const game2 = { company: 'Games Workshop', name: 'Age of Sigmar' };
+
+                                console.log(JSON.stringify(game1) === JSON.stringify(game2));
+                                // false;
+                            </code>
+                        </pre>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="5">
+                                const game1 = { name: 'Age of Sigmar', company: 'Games Workshop' };
+                                const game2 = { company: 'Games Workshop', name: 'Age of Sigmar' };
+
+                                // lodash
+                               .isEqual(game1, game2); // true
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape >
+                                #{name: 'Sigmar'} === #{name: 'Sigmar'} // true
+
+                                #['Order', 'Chaos'] === #['Order', 'Chaos'] // true
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3 style="color: greenyellow">Зачем?</h3>
+                    </section>
+                    <section>
+                        <span class="fragment semi-fade-out">
+                            <span class="fragment fade-out">
+                                <img
+                                    src="img/record/1.png"
+                                    alt="Immutable.js logo"
+                                    style="margin-bottom: 30px"
+                                />
+                                <img src="img/record/2.png" alt="Immer logo" />
+                            </span>
+                        </span>
+                    </section>
+                </section>
                 <!--Proposals end-->
 
                 <!-- end-->
