@@ -891,6 +891,75 @@
                         <h3 style="color: red">Форматирование не завезли</h3>
                     </section>
                 </section>
+                <!-- proposal-pipeline-operator -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-pipeline-operator"
+                                target="_blank"
+                                >Stage 2 -<br />
+                                proposal-pipeline-operator</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                            "
+                        >
+                            <div>three( two( one( value ) ) )</div>
+                            <b style="color: greenyellow">VS</b>
+                            <div>value.one().two().three()</div>
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="0|3|4-5|6|2,8-10|1-11" >
+                                console.log(
+                                    chalk.dim(
+                                        `$ ${Object.keys(envar)
+                                            .map(envar) =>
+                                                `${envar}=${envars[envar]}`)
+                                            .join(' ')
+                                        }`,
+                                        'node',
+                                        args.join(' ')));
+                                    )
+                                )
+                            </code>
+                        </pre>
+                        <h3 class="fragment">|></h3>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1|2|3|4|5|6" >
+                                Object.keys(envars)
+                                .map(envar) => `${envar}=${envars[envar]}`)
+                                .join(' ')
+                                |> `$ #{%}`
+                                |> chalk.dim(%, 'node', args.join(' ' ))
+                                |> console.log(%)
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h3>%</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="4-6" >
+                                Object.keys(envars)
+                                .map(envar) => `${envar}=${envars[envar]}`)
+                                .join(' ')
+                                |> `$ #{%}`
+                                |> chalk.dim(%, 'node', args.join(' ' ))
+                                |> console.log(%)
+                            </code>
+                        </pre>
+                    </section>
+                </section>
                 <!--Proposals end-->
 
                 <!-- end-->
