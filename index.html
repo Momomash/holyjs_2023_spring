@@ -434,6 +434,7 @@
                         </pre>
                     </section>
                 </section>
+                <!-- proposal-duplicate-named-capturing-groups -->
                 <section>
                     <section>
                         <h3>
@@ -476,6 +477,62 @@
                             Упомянуть что одинаковые имена группу будут
                             разрешены только между разделительным знаком
                         </aside>
+                    </section>
+                </section>
+                <!-- proposal-json-modules -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-json-modules"
+                                target="_blank"
+                                >Stage 3 -<br />
+                                proposal-json-modules</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape>
+                                 import config from './config.json';
+                                 console.log(config.username);
+                            </code>
+                         </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment fade-in"
+                        >
+                            Failed to load module script: Expected a JavaScript
+                            module script but the server responded with a MIME
+                            type of "application/json". Strict MIME type
+                            checking is enforced for module scripts per HTML
+                            spec.
+                        </blockquote>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1">
+                                 import config from './config.json' assert {type: 'json'};
+                            </code>
+                         </pre>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1">
+                                 const config = import('./config.json' assert {type: 'json'});
+                                 config.then( data =>
+                                    data.default.forEach(param => {
+                                        console.log(param);
+                                 })
+                                 )
+                            </code>
+                         </pre>
+                        <pre class="fragment fade-in">
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
+                                new Worker('app.wasm', {
+                                    type: 'module',
+                                    assert: {type: 'webassembly'}
+                                 })
+                            </code>
+                         </pre>
                     </section>
                 </section>
 
