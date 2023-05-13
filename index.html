@@ -1348,6 +1348,102 @@
                         <img src="img/wakelock/2.png" alt="wakelock browsers" />
                     </section>
                 </section>
+                <!-- HTML Sanitizer API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API"
+                                target="_blank"
+                                >HTML Sanitizer API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <img src="img/sanitizer/1.png" alt="XSS attacks" />
+                    </section>
+                    <section>
+                        <img
+                            src="img/sanitizer/2.png"
+                            alt="packages for sanitize"
+                        />
+                    </section>
+                    <section>
+                        <h3>Element.setHTML()</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|4|7|9" >
+                                const initialString =
+                                    "any <\script>alert('За Альянс!')<" + "/script> text";
+
+                                const sanitizer = new Sanitizer();
+
+                                const target = document.getElementsById('target');
+                                target.setHTML(initialString, {sanitizer})
+
+                                console.log(target.innerHTML); // any text
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Element.sanitizeFor()</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|6-7|9-10|12-13" >
+                                const initialString =
+                                    "any <\script>alert('За Альянс!')<" + "/script> text";
+
+                                const sanitizer = new Sanitizer();
+
+                                const sanitizedString =
+                                    sanitizer.sanitizeFor('div', initialString);
+
+                                console.log(sanitizedString instanceof HTMLDivElement);
+                                // true
+
+                                document.querySelector('div#target')
+                                .replaceChildren(sanitizedString)
+
+
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Element.sanitizeFor()</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-4|6|7" >
+                                const sanitizer = new Sanitizer();
+
+                                const iframe = document.getElementById('userFrame');
+                                const treeFromIframe = iframe.contentWindow.document;
+
+                                const sanitizedIframeTree = sanitizer.sanitize(treeFromIframe);
+                                iframe.replaceChildren(sanitizedIframeTree);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/sanitizerapi-example-q0c7qk?file=/src/index.js"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fsanitizerapi-example-q0c7qk%3Ffile%3D%2Fsrc%2Findex.js&10&0"
+                                width="450"
+                                height="450"
+                                border="0"
+                                title="QR код"
+                                alt="Sanitizer API demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                    <section>
+                        <img
+                            src="img/sanitizer/3.png"
+                            alt="Sanitizer API browsers"
+                        />
+                    </section>
+                </section>
+
                 <!--Web APIs end-->
 
                 <!-- end-->
