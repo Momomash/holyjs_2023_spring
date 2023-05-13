@@ -1273,10 +1273,81 @@
                         </a>
                     </section>
                     <section>
-                        <img src="img/idle/2.png" alt="IdleDetection browsers" />
+                        <img
+                            src="img/idle/2.png"
+                            alt="IdleDetection browsers"
+                        />
                     </section>
                 </section>
+                <!-- Screen Wake Lock API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API"
+                                target="_blank"
+                                >Screen Wake Lock API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Пользователь готовит по рецепту</li>
+                            <li>Использование навигатора</li>
+                            <li>
+                                Использование приложения с управлением голосом
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1|5-6" >
+                                if ("wakeLock" in navigator) {
+                                    let wakeLock = null;
 
+                                    try {
+                                        wakeLock = await navigator.wakeLock.request("screen");
+                                        console.log("Wake Lock is active!");
+                                    } catch (err) {
+                                        console.error(`${err.name}, ${err.message}`);
+                                    }
+
+                                } else {
+                                    console.error("Wake lock is not supported by this browser.");
+                                }
+                              </code>
+                          </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-5" >
+                                // снять блокировку пробуждения
+
+                                wakeLock.release().then(() => {
+                                    wakeLock = null;
+                                });
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-5" >
+                                // среагировать на пробуждение
+
+                                wakeLock.addEventListener('release', () => {
+                                    console.log('Hello, user!');
+                                });
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <img
+                            src="img/wakelock/1.png"
+                            alt="конь грустит потому что wakelock не сработал"
+                        />
+                    </section>
+                    <section>
+                        <img src="img/wakelock/2.png" alt="wakelock browsers" />
+                    </section>
+                </section>
                 <!--Web APIs end-->
 
                 <!-- end-->
