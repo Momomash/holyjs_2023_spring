@@ -19,7 +19,7 @@
     </head>
     <body>
         <div class="reveal">
-            <div class="slides">
+            <ul class="slides">
                 <!--Вступление-->
                 <section style="text-align: left">
                     <h2>Что нового в JS и вебе</h2>
@@ -1144,6 +1144,139 @@
                     />
                     <p>К интересному</p>
                 </section>
+                <section>
+                    <h3 style="color: greenyellow">Дисклеймер</h3>
+                    <p>
+                        Следующие Web API поддерживаются еще не всеми браузерами
+                        🧪.<br />
+                        Перед использованием убедитесь, что поддерживаются
+                        нужные вам платформы
+                    </p>
+                </section>
+                <!-- Idle Detection API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API"
+                                target="_blank"
+                                >Idle Detection API</a
+                            >
+                            <div></div>
+                        </h3>
+                    </section>
+                    <section>
+                        <img
+                            src="img/idle/1.png"
+                            alt="idle detection in windows"
+                        />
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                Защита коммерческой информации (например,
+                                открытие в новом окне)
+                            </li>
+                            <li>Оптимизация ресурсов клиента</li>
+                            <li>
+                                Уведомление пользователя только когда он «в
+                                фокусе» на сайте
+                            </li>
+                            <li>Аналитика</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape>
+                                const { userState, screenState } = idleDetector();
+                            </code>
+                        </pre>
+                        <table>
+                            <tr>
+                                <td>userState</td>
+                                <td style="color: red; border-color: white">
+                                    idle
+                                </td>
+                                <td
+                                    style="
+                                        color: greenyellow;
+                                        border-color: white;
+                                    "
+                                >
+                                    active
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>screenState</td>
+                                <td style="color: red; border-color: white">
+                                    locked
+                                </td>
+                                <td
+                                    style="
+                                        color: greenyellow;
+                                        border-color: white;
+                                    "
+                                >
+                                    unlocked
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="2|11|13-17|20" >
+                                if ('IdleDetector' in window) {
+                                    const state = await IdleDetector.requestPermission();
+
+                                    if (state !== 'granted'){
+                                        console.log('User denied access for idle detection');
+                                    } else {
+                                        try {
+                                            const controller = new AbortController();
+                                            const signal = controller.signal;
+
+                                            const idleDetector = new IdleDetector();
+
+                                            idleDetector.addEventListener("change", () => {
+                                              const userState = idleDetector.userState;
+                                              const screenState = idleDetector.screenState;
+                                              console.log(`Idle change: ${userState}, ${screenState}.`);
+                                            });
+
+                                            await idleDetector.start({
+                                              threshold: 60_000,
+                                              signal,
+                                            });
+                                            console.log("IdleDetector is active.");
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/idle-detection-api-demo-k8xkud?file=/src/idle_detection.js"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fidle-detection-api-demo-k8xkud%3Ffile%3D%2Fsrc%2Fidle_detection.js&10&0"
+                                width="450"
+                                height="450"
+                                border="0"
+                                title="QR код"
+                                alt="Idle detection demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                    <section>
+                        <img src="img/idle/2.png" alt="IdleDetection browsers" />
+                    </section>
+                </section>
+
                 <!--Web APIs end-->
 
                 <!-- end-->
@@ -1164,7 +1297,7 @@
                 <!--                            </tr>-->
                 <!--                        </table>-->
                 <!--                    </section>-->
-            </div>
+            </ul>
         </div>
 
         <script src="dist/reveal.js"></script>
