@@ -960,6 +960,143 @@
                         </pre>
                     </section>
                 </section>
+                <!-- proposal-decorators -->
+                <!-- proposal-pipeline-operator -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-decorators"
+                                target="_blank"
+                                >Stage 3 -<br />
+                                proposal-decorators</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3,5|4,8" >
+                                function logDuration(fn) {
+                                    return function decorator(...args) {
+                                        let start = Date.now();
+                                        let result = fn.apply(this, args);
+                                        let duration = Date.now - start;
+
+                                        console.log(fn.name + '() duration: ' + duration);
+                                        return result;
+                                    };
+                                };
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <img
+                            src="img/decorators/1.png"
+                            alt="Мы слишком долго ждали декораторов"
+                        />
+
+                        <p>
+                            4 итерации <br />
+                            7 лет разработки <br />
+                            Уже 2 legacy-имплементации
+                        </p>
+                        <p class="fragment" data-fragment-index="1"><b>↓</b></p>
+                        <p class="fragment" data-fragment-index="1">
+                            <b style="color: greenyellow">Stage 3</b>
+                        </p>
+                    </section>
+                    <section>
+                        <table
+                            cellspacing="0"
+                            cellpadding="0"
+                            style="border: 0"
+                        >
+                            <tr>
+                                <td
+                                    class="fragment highlight-red"
+                                    data-fragment-index="1"
+                                    style="border: 0"
+                                >
+                                    Возможность через прототип влиять на объект
+                                    декорирования
+                                </td>
+                                <td
+                                    class="fragment"
+                                    data-fragment-index="1"
+                                    style="color: greenyellow; border: 0"
+                                >
+                                    Работают только с объектом декорирования, а
+                                    не с дескрипторами
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="fragment highlight-red"
+                                    data-fragment-index="1"
+                                    style="border: 0"
+                                >
+                                    Проблемы производительности
+                                </td>
+                                <td
+                                    class="fragment"
+                                    data-fragment-index="1"
+                                    style="color: greenyellow; border: 0"
+                                >
+                                    Работают только с классами и их элементами
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 0"></td>
+                                <td
+                                    class="fragment"
+                                    data-fragment-index="1"
+                                    style="border: 0"
+                                >
+                                    Новый объект декорирования - accessor
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="typescript"  data-trim data-noescape data-line-numbers="3-13|4|5|6-9|10-11" >
+                                 type Decorator = (
+                                    value: Input,
+                                    context: {
+                                        kind: string;
+                                        name: string | symbol;
+                                        access: {
+                                            get?(): unknown;
+                                            set?(value: unknown): void;
+                                        };
+                                        private?: boolean;
+                                        static?: boolean;
+                                        addInitializer?(initializer: () => void): void;
+                                    }
+                                 ) => Output | void;
+                             </code>
+                         </pre>
+                    </section>
+                    <section>
+                        <!--TODO: добавить ссылку на codesandbox с демонстрацией-->
+                        <a href="">
+                            <h3>Демо</h3>
+                            <!--TODO: добавить qr-code со ссылкой на codesandbox-->
+                        </a>
+                    </section>
+                    <section>
+                        <h3>Какие декораторы использовать сейчас?</h3>
+                    </section>
+                    <section>
+                        <blockquote>
+                            <b style="color: red">
+                                "The old thing is deprecated, <br />and the new
+                                thing is not ready yet!"</b
+                            >
+                        </blockquote>
+                    </section>
+                </section>
+
                 <!--Proposals end-->
 
                 <!-- end-->
