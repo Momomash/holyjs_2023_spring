@@ -1265,7 +1265,6 @@
                                 src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fidle-detection-api-demo-k8xkud%3Ffile%3D%2Fsrc%2Fidle_detection.js&10&0"
                                 width="450"
                                 height="450"
-                                border="0"
                                 title="QR код"
                                 alt="Idle detection demo qr code"
                             />
@@ -1422,8 +1421,15 @@
                     </section>
                     <section>
                         <div class="r-stack">
-                            <img  src="img/sanitizer/3.png" alt="sanitizer config">
-                            <img class="fragment" src="img/sanitizer/4.png" alt="sanitizer config">
+                            <img
+                                src="img/sanitizer/3.png"
+                                alt="sanitizer config"
+                            />
+                            <img
+                                class="fragment"
+                                src="img/sanitizer/4.png"
+                                alt="sanitizer config"
+                            />
                         </div>
                     </section>
                     <section>
@@ -1435,7 +1441,6 @@
                                 src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fsanitizerapi-example-q0c7qk%3Ffile%3D%2Fsrc%2Findex.js&10&0"
                                 width="450"
                                 height="450"
-                                border="0"
                                 title="QR код"
                                 alt="Sanitizer API demo qr code"
                             />
@@ -1446,6 +1451,96 @@
                         <img
                             src="img/sanitizer/5.png"
                             alt="Sanitizer API browsers"
+                        />
+                    </section>
+                </section>
+                <!-- CSS Custom Highlight API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API"
+                                target="_blank"
+                                >CSS Custom Highlight API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <a href="https://doka.guide/search/" target="_blank">
+                            <img src="img/highlight/1.png" alt="Doka" />
+                        </a>
+                    </section>
+                    <section>
+                        <img
+                            src="img/highlight/2.png"
+                            alt="Highlight packages"
+                        />
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                            "
+                        >
+                            <ul style="margin-right: 50px">
+                                <li>Больше зависимостей</li>
+                                <li>Доп обертка в DOM</li>
+                            </ul>
+                            <img
+                                src="img/highlight/3.png"
+                                alt="highlight dom"
+                                style="width: 50%"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1|3-5,7-9|11|12" >
+                                 const text = document.getElementById('root');
+                                 
+                                 const range1 = new Range();
+                                 range1.setStart(text, 10);
+                                 range1.setEnd(text, 15);
+                                 
+                                 const range2 = new Range();
+                                 range2.setStart(text, 18);
+                                 range2.setEnd(text, 21);
+
+                                 const highlight = new Highlight(...ranges.flat());
+                                 CSS.highlights.set("search-highlight", highlight);
+                             </code>
+                         </pre>
+                        <pre class="fragment">
+                            <code class="css"  data-trim data-noescape data-line-numbers="1|2-3" >
+                                ::highlight(search-highlight) {
+                                    background-color: green;
+                                    color: white;
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/css-custom-highlight-phlzss?file=/src/index.js:1306-1359"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fcss-custom-highlight-phlzss%3Ffile%3D%2Fsrc%2Findex.js%3A1306-1359&10&0"
+                                width="450"
+                                height="450"
+                                title="QR код"
+                                alt="СSS Custom Highlight demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                    <section>
+                        <img
+                            src="img/highlight/4.png"
+                            alt="CSS Custom Highlight browsers"
                         />
                     </section>
                 </section>
