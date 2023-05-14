@@ -50,48 +50,156 @@
                     </div>
                 </section>
                 <section>
-                    <h3>Обо мне</h3>
-                    <div style="display: flex; flex-direction: row">
-                        <img
-                            src="img/me.png"
-                            width="250"
-                            alt="Мария Кондаурова"
-                            style="
-                                border-radius: 50%;
-                                border: 5px solid white;
-                                margin-right: 50px;
-                            "
-                        />
-                        <ul style="list-style: none">
-                            <li>Начинала с верстки за еду</li>
-                            <li>
-                                Поработала в российском аутсорсе и американском
-                                энтерпрайзе
-                            </li>
-                            <li><s>Душевно</s> душно ревьюю</li>
-                        </ul>
-                    </div>
-                </section>
-                <section>
-                    <img src="img/biocad.png" alt="Biocad" />
-                </section>
-                <section style="text-align: left">
-                    <h3>О чем расскажу</h3>
-                    <ul>
-                        <li>Автостопом по стандартам</li>
-                        <li>
-                            Пропоузалы:
+                    <section>
+                        <h3>Обо мне</h3>
+                        <div style="display: flex; flex-direction: row">
+                            <img
+                                src="img/me.png"
+                                width="250"
+                                alt="Мария Кондаурова"
+                                style="
+                                    border-radius: 50%;
+                                    border: 5px solid white;
+                                    margin-right: 50px;
+                                "
+                            />
                             <ul style="list-style: none">
-                                <li>Что мы увидим в ECMAScript 2023</li>
-                                <li>Что мы увидим еще, но позже</li>
+                                <li>Начинала с верстки за еду</li>
+                                <li>
+                                    Поработала в российском аутсорсе и
+                                    американском энтерпрайзе
+                                </li>
+                                <li><s>Душевно</s> душно ревьюю</li>
                             </ul>
-                        </li>
-                        <li>Новые Web API</li>
-                    </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <table>
+                            <tr>
+                                <td>telegram</td>
+                                <td>@Momomash</td>
+                            </tr>
+                            <tr>
+                                <td>github</td>
+                                <td>@Momomash</td>
+                            </tr>
+                            <tr>
+                                <td>twitter</td>
+                                <td>@mari_momos</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <img src="img/biocad.png" alt="Biocad" />
+                    </section>
+                    <section style="text-align: left">
+                        <h3>О чем расскажу</h3>
+                        <ul style="list-style: none">
+                            <li>Автостопом по стандартам</li>
+                            <li>
+                                Пропоузалы:
+                                <ul style="list-style: none">
+                                    <li>Что мы увидим в ECMAScript 2023</li>
+                                    <li>Что мы увидим еще, но позже</li>
+                                </ul>
+                            </li>
+                            <li>Новые Web API</li>
+                        </ul>
+                    </section>
                 </section>
                 <!--конец вступления-->
-
                 <!--Автостопом по стандартами start -->
+                <section>
+                    <section>
+                        <div class="r-stack">
+                            <img src="img/netscape.png" alt="netscape" />
+                            <img
+                                class="fragment"
+                                src="img/browserWar.png"
+                                alt="browserWar"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <div>
+                                <img src="img/ecma.png" alt="tc39" />
+                                <div
+                                    class="fragment"
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                    "
+                                >
+                                    <img src="img/tc39.png" alt="tc39" />
+                                    <a
+                                        href="https://github.com/tc39"
+                                        target="_blank"
+                                        >https://github.com/tc39</a
+                                    >
+                                </div>
+                            </div>
+                            <img class="fragment" src="img/tc39repo.png" />
+                            <img class="fragment" src="img/tc39tests.png" />
+                        </div>
+                    </section>
+                    <section>Proposals</section>
+                    <section>
+                        <h3 style="margin-bottom: 0">
+                            Жизненный цикл пропоузала
+                        </h3>
+                        <small>(почти как разработка игры)</small>
+                        <table style="font-size: 1.5rem">
+                            <tr class="fragment">
+                                <td style="border: 0">0 - идея 💡</td>
+                                <td style="border: 0">
+                                    Есть проблема -> предложение решения
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">1 - предложение</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Концепт</span
+                                    ><br />
+                                    Обоснование и описание
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">2 - черновик</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Прототип</span
+                                    ><br />
+                                    Формальная реализация спецификации,<br />
+                                    Первая имплементация (babel)
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">3- кандидат</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Бета-тест</span
+                                    ><br />
+                                    Отзызы от разработчиков и браузеров<br />
+                                    Фикс багов
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">4- финал</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Предрелиз</span
+                                    ><br />
+                                    Написаны юнит-тесты (test-262)<br />
+                                    Практический опыт применения <br />
+                                    -> Включение в ближайшую версию языка
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                </section>
                 <!--Автостопом по стандартами end -->
 
                 <!--Proposals start-->
@@ -249,27 +357,6 @@
                             </div>
                         </section>
                     </section>
-
-                    <!--Proposals end-->
-
-                    <!-- end-->
-
-                    <section>
-                        <table>
-                            <tr>
-                                <td>telegram</td>
-                                <td>@Momomash</td>
-                            </tr>
-                            <tr>
-                                <td>github</td>
-                                <td>@Momomash</td>
-                            </tr>
-                            <tr>
-                                <td>twitter</td>
-                                <td>@mari_momos</td>
-                            </tr>
-                        </table>
-                    </section>
                 </section>
                 <!-- proposal-change-array-by-copy -->
                 <section>
@@ -328,7 +415,6 @@
                         </div>
                     </section>
                 </section>
-
                 <section>
                     <h3>Что мы увидим, но позже</h3>
                 </section>
@@ -1107,59 +1193,61 @@
                 <!--Proposals end-->
                 <!--Web APIs start-->
                 <section>
-                    <h3>Не одним JavaScript-ом едины</h3>
-                </section>
-                <section>
-                    <img src="img/mdn.png" alt="mdn" />
-                </section>
-                <section>
-                    <div style="display: flex; justify-content: center">
-                        <a
-                            href="https://wicg.io/"
-                            style="
-                                display: flex;
-                                flex-direction: row;
-                                align-items: center;
-                            "
-                            ><img
-                                src="img/wicg/1.png"
-                                alt="WICG logo"
-                                style="margin-right: 20px"
+                    <section>
+                        <h3>Не одним JavaScript-ом едины</h3>
+                    </section>
+                    <section>
+                        <img src="img/mdn.png" alt="mdn" />
+                    </section>
+                    <section>
+                        <div style="display: flex; justify-content: center">
+                            <a
+                                href="https://wicg.io/"
+                                style="
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                "
+                                ><img
+                                    src="img/wicg/1.png"
+                                    alt="WICG logo"
+                                    style="margin-right: 20px"
+                                />
+                                <p>Web Incubator CG</p></a
+                            >
+                        </div>
+                        <aside class="notes">
+                            Веб инкубатор CG - часть W3С - большого консорциума
+                            интернета
+                        </aside>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img src="img/wicg/2.png" alt="wic proposals" />
+                            <img
+                                src="img/wicg/3.png"
+                                class="fragment"
+                                alt="wic proposals"
                             />
-                            <p>Web Incubator CG</p></a
-                        >
-                    </div>
-                    <aside class="notes">
-                        Веб инкубатор CG - часть W3С - большого консорциума
-                        интернета
-                    </aside>
-                </section>
-                <section>
-                    <div class="r-stack">
-                        <img src="img/wicg/2.png" alt="wic proposals" />
+                        </div>
+                    </section>
+                    <section>
                         <img
-                            src="img/wicg/3.png"
-                            class="fragment"
-                            alt="wic proposals"
+                            src="img/wicg/4.png"
+                            alt="кот с руками"
+                            style="max-height: 400px"
                         />
-                    </div>
-                </section>
-                <section>
-                    <img
-                        src="img/wicg/4.png"
-                        alt="кот с руками"
-                        style="max-height: 400px"
-                    />
-                    <p>К интересному</p>
-                </section>
-                <section>
-                    <h3 style="color: greenyellow">Дисклеймер</h3>
-                    <p>
-                        Следующие Web API поддерживаются еще не всеми браузерами
-                        🧪.<br />
-                        Перед использованием убедитесь, что поддерживаются
-                        нужные вам платформы
-                    </p>
+                        <p>К интересному</p>
+                    </section>
+                    <section>
+                        <h3 style="color: greenyellow">Дисклеймер</h3>
+                        <p>
+                            Следующие Web API поддерживаются еще не всеми
+                            браузерами 🧪.<br />
+                            Перед использованием убедитесь, что поддерживаются
+                            нужные вам платформы
+                        </p>
+                    </section>
                 </section>
                 <!-- Idle Detection API -->
                 <section>
@@ -1781,54 +1869,56 @@
                 <!--Web APIs end-->
                 <!-- ending start-->
                 <section>
-                    <h3 style="color: greenyellow">Выводы...</h3>
-                </section>
-                <section data-background-image="img/bean.png"></section>
-                <section>
-                    <img
-                        class="fragment fade-in-then-out"
-                        src="img/fade.png"
-                        alt="the web is improving"
-                    />
-                </section>
+                    <section>
+                        <h3 style="color: greenyellow">Выводы...</h3>
+                    </section>
+                    <section data-background-image="img/bean.png"></section>
+                    <section>
+                        <img
+                            class="fragment fade-in-then-out"
+                            src="img/fade.png"
+                            alt="the web is improving"
+                        />
+                    </section>
 
-                <section>
-                    <div
-                        style="
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            justify-content: space-around;
-                        "
-                    >
-                        <div>
-                            <img
-                                src="img/me.png"
-                                width="250"
-                                alt="Мария Кондаурова"
-                                style="
-                                    border-radius: 50%;
-                                    border: 5px solid white;
-                                "
-                            />
-                            <p>BIOCAD</p>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-around;
+                            "
+                        >
+                            <div>
+                                <img
+                                    src="img/me.png"
+                                    width="250"
+                                    alt="Мария Кондаурова"
+                                    style="
+                                        border-radius: 50%;
+                                        border: 5px solid white;
+                                    "
+                                />
+                                <p>BIOCAD</p>
+                            </div>
+
+                            <table>
+                                <tr>
+                                    <td>telegram</td>
+                                    <td>@Momomash</td>
+                                </tr>
+                                <tr>
+                                    <td>github</td>
+                                    <td>@Momomash</td>
+                                </tr>
+                                <tr>
+                                    <td>twitter</td>
+                                    <td>@mari_momos</td>
+                                </tr>
+                            </table>
                         </div>
-
-                        <table>
-                            <tr>
-                                <td>telegram</td>
-                                <td>@Momomash</td>
-                            </tr>
-                            <tr>
-                                <td>github</td>
-                                <td>@Momomash</td>
-                            </tr>
-                            <tr>
-                                <td>twitter</td>
-                                <td>@mari_momos</td>
-                            </tr>
-                        </table>
-                    </div>
+                    </section>
                 </section>
             </ul>
             <!-- finish! -->
