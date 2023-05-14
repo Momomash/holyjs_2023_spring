@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <title>Что нового в JS и вебе</title>
+
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/dracula.css" />
+        <link rel="stylesheet" href="custom_styles.css" />
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    </head>
+    <body>
+        <div class="reveal">
+            <ul class="slides">
+                <!--Вступление-->
+                <section style="text-align: left">
+                    <h2>Что нового в JS и вебе</h2>
+                    <br />
+                    <div
+                        style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        "
+                    >
+                        <img
+                            src="img/me.png"
+                            width="120"
+                            alt="Мария Кондаурова"
+                            style="border-radius: 50%; border: 5px solid white"
+                        />
+                        <div
+                            style="
+                                margin-left: 30px;
+                                display: flex;
+                                flex-direction: column;
+                            "
+                        >
+                            <b>Мария Кондаурова</b>
+                            <small>BIOCAD</small>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <section>
+                        <h3>Обо мне</h3>
+                        <div style="display: flex; flex-direction: row">
+                            <img
+                                src="img/me.png"
+                                width="250"
+                                alt="Мария Кондаурова"
+                                style="
+                                    border-radius: 50%;
+                                    border: 5px solid white;
+                                    margin-right: 50px;
+                                "
+                            />
+                            <ul style="list-style: none">
+                                <li>Начинала с верстки за еду</li>
+                                <li>
+                                    Поработала в российском аутсорсе и
+                                    американском энтерпрайзе
+                                </li>
+                                <li><s>Душевно</s> душно ревьюю</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <table>
+                            <tr>
+                                <td>telegram</td>
+                                <td>@Momomash</td>
+                            </tr>
+                            <tr>
+                                <td>github</td>
+                                <td>@Momomash</td>
+                            </tr>
+                            <tr>
+                                <td>twitter</td>
+                                <td>@mari_momos</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <img src="img/biocad.png" alt="Biocad" />
+                    </section>
+                    <section style="text-align: left">
+                        <h3>О чем расскажу</h3>
+                        <ul style="list-style: none">
+                            <li>Автостопом по стандартам</li>
+                            <li>
+                                Пропоузалы:
+                                <ul style="list-style: none">
+                                    <li>Что мы увидим в ECMAScript 2023</li>
+                                    <li>Что мы увидим еще, но позже</li>
+                                </ul>
+                            </li>
+                            <li>Новые Web API</li>
+                        </ul>
+                    </section>
+                </section>
+                <!--конец вступления-->
+                <!--Автостопом по стандартами start -->
+                <section>
+                    <section>
+                        <div class="r-stack">
+                            <img src="img/netscape.png" alt="netscape" />
+                            <img
+                                class="fragment"
+                                src="img/browserWar.png"
+                                alt="browserWar"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <div>
+                                <img src="img/ecma.png" alt="tc39" />
+                                <div
+                                    class="fragment"
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                    "
+                                >
+                                    <img src="img/tc39.png" alt="tc39" />
+                                    <a
+                                        href="https://github.com/tc39"
+                                        target="_blank"
+                                        >https://github.com/tc39</a
+                                    >
+                                </div>
+                            </div>
+                            <img class="fragment" src="img/tc39repo.png" />
+                            <img class="fragment" src="img/tc39tests.png" />
+                        </div>
+                    </section>
+                    <section>Proposals</section>
+                    <section>
+                        <h3 style="margin-bottom: 0">
+                            Жизненный цикл пропоузала
+                        </h3>
+                        <small>(почти как разработка игры)</small>
+                        <table style="font-size: 1.5rem">
+                            <tr class="fragment">
+                                <td style="border: 0">0 - идея 💡</td>
+                                <td style="border: 0">
+                                    Есть проблема -> предложение решения
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">1 - предложение</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Концепт</span
+                                    ><br />
+                                    Обоснование и описание
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">2 - черновик</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Прототип</span
+                                    ><br />
+                                    Формальная реализация спецификации,<br />
+                                    Первая имплементация (babel)
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">3- кандидат</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Бета-тест</span
+                                    ><br />
+                                    Отзызы от разработчиков и браузеров<br />
+                                    Фикс багов
+                                </td>
+                            </tr>
+                            <tr class="fragment">
+                                <td style="border: 0">4- финал</td>
+                                <td style="border: 0">
+                                    <span style="color: greenyellow"
+                                        >Предрелиз</span
+                                    ><br />
+                                    Написаны юнит-тесты (test-262)<br />
+                                    Практический опыт применения <br />
+                                    -> Включение в ближайшую версию языка
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                </section>
+                <!--Автостопом по стандартами end -->
+
+                <!--Proposals start-->
+                <section>
+                    <h3>Что мы увидим в ECMAScript 2023</h3>
+                </section>
+                <!-- proposal-symbols-as-weakmap-keys-->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-symbols-as-weakmap-keys"
+                                target="_blank"
+                                >proposal-symbols-as-weakmap-keys</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>Map</td>
+                                    <td>WeakMap</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Тип ключа</td>
+                                    <td><p>Any</p></td>
+                                    <td><p>Object</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>Препятствует сборке мусора?</p></td>
+                                    <td><p>true</p></td>
+                                    <td>
+                                        <p style="color: greenyellow">false</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section style="text-align: left">
+                        <pre>
+                    <code class="javascript"  data-trim data-noescape data-line-numbers="1|2-3|5">
+                        let primarch = {name: 'Horus'};
+                        const weakMap = new WeakMap([[primarch, 'traitor']]);
+                        primarch = null;
+
+                        console.log(weakMap.get(primarch))  // undefined
+                    </code>
+                        </pre>
+
+                        <div class="fragment custom blur">
+                            <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1|2-5|7">
+                                let primarch = {name: 'Horus'};
+                                const map = new Map();
+                                map.set({'primarch': primarch});
+
+                                primarch = null;
+
+                                map.get('primarch') // {name: 'Horus'}
+                            </code>
+                        </pre>
+                        </div>
+                        <aside class="notes">
+                            В конце: Для чего можно использовать WeakMap?
+                            Например, чтобы хранить временные данные.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>Map</td>
+                                    <td>WeakMap</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Тип ключа</td>
+                                    <td><p>Any</p></td>
+                                    <td>
+                                        <p style="white-space: nowrap">
+                                            Object,
+                                            <span style="color: greenyellow"
+                                                >Symbol</span
+                                            >
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p>Препятствует сборке мусора?</p></td>
+                                    <td><p>true</p></td>
+                                    <td>false</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+                <!-- proposal-array-find-from-last -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-array-find-from-last"
+                                target="_blank"
+                                >proposal-array-find-from-last</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <section style="text-align: left">
+                            <pre>
+                     <!-- TODO: подставить настоящие данные -->
+                    <code class="javascript"  data-trim data-noescape>
+                       let games = [
+                        {author: 'author1', title: 'title1', year: 2019},
+                        {author: 'author2', title: 'title2', year: 2020},
+                        {author: 'author1', title: 'title3', year: 2021},
+                        {author: 'author2', title: 'title4', year: 2022},
+                        ]
+                    </code>
+                        </pre>
+                            <div class="fragment">
+                                <pre>
+                                     <code class="javascript"  data-trim data-noescape data-line-numbers="0|1,5">
+                                        const game = [...games].reverse().find(
+                                            ({author}) => author === 'author1'
+                                         );
+
+                                        const indexOfGame = games.length - 1 - [...games].reverse()
+                                         .findIndex(
+                                            ({author}) => author === 'author1'
+                                         );
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="fragment">
+                                <pre>
+                                     <code class="javascript"  data-trim data-noescape>
+                                        const game = games.findLast(
+                                            ({author}) => author === 'author1'
+                                         );
+
+                                        const indexOfGame = games.findLastIndex(
+                                            ({author}) => author === 'author1'
+                                         );
+                                    </code>
+                                </pre>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+                <!-- proposal-change-array-by-copy -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-change-array-by-copy"
+                                target="_blank"
+                                >proposal-change-array-by-copy</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+                                text-align: left;
+                            "
+                        >
+                            <div>
+                                .reverse() <br />
+                                .sort() <br />
+                                .splice()
+                            </div>
+                            <div class="fragment">
+                                <span style="color: red">[...array]</span
+                                >.reverse() <br />
+                                <span style="color: red">[...array]</span
+                                >.sort() <br />
+                                <span style="color: red">[...array]</span
+                                >.splice()
+                            </div>
+                            <div class="fragment">
+                                .toReversed() <br />
+                                .toSorted() <br />
+                                .toSpliced()
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <b style="color: greenyellow">.with</b>(index, value) ->
+                        Array
+                        <div class="fragment" style="margin-top: 30px">
+                            <pre>
+                                <code class="javascript"  data-trim data-noescape data-line-numbers="1|3|5">
+                                    const array = [1,2,3];
+
+                                    array.with(2,10); // => [1,10,3]
+
+                                    console.log(array); // => [1,2,3]
+                                </code>
+                            </pre>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <h3>Что мы увидим, но позже</h3>
+                </section>
+                <!-- proposal-array-grouping -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-array-grouping"
+                                target="_blank"
+                                >Stage 3 - proposal-array-grouping</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-11|13-15">
+                                type Primarch = { name: string, isLoyal: string };
+
+                                const primarchs: Primarch[] = [
+                                    { name: 'Horus', isLoyal: false },
+                                    { name: 'Leman Russ', isLoyal: true },
+                                    { name: 'Magnus the Red', isLoyal: true },
+                                    { name: 'Mortarion', isLoyal: false },
+                                    { name: 'Lion El Jonson', isLoyal: false },
+                                    { name: 'Conrad Curze', isLoyal: false },
+                                    { name: 'Corvus Corax', isLoyal: true },
+                                ];
+
+                                type GroupedPrimarchs = {
+                                    loyal: Primarch[], traitor: Primarch[]
+                                };
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape>
+                                const groupedPrimarchs = primarchs.reduce(
+                                    (acc, primarch) => {
+                                        primarch.isLoyal ? acc.loyal = [...acc.loyal, primarch]
+                                        : acc.traitor = [...acc.traitor, primarch];
+                                        return acc;
+                                    },
+                                    {loyal: [], traitor: []}
+                                );
+                            </code>
+                        </pre>
+                        <pre class="fragment">
+                            <code class="typescript"  data-trim data-noescape data-line-numbers="1|3-7|8-13">
+                                // src/utils/groupByField.ts
+
+                                const groupByField = (
+                                    array: T[],
+                                    callback: (item: T) => boolean,
+                                    trueField: string,
+                                    falseField: string
+                                ) => array.reduce(
+                                            (acc, item) => {
+                                                callback(item) ? acc[trueField] = [...acc[trueField], item]
+                                                : acc[falseField] = [...acc[falseField], item];
+                                            }
+                                        );
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h4 class="r-fit-text">Можно ли сделать лучше?</h4>
+                    </section>
+                    <section>
+                        <h4 class="r-fit-text" style="margin-bottom: 50px">
+                            Новые методы:
+                        </h4>
+                        Array<b style="color: greenyellow">.group()</b>
+                        <br />
+                        Array<b style="color: greenyellow">.groupToMap()</b>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|3">
+                                  const groupedPrimarch = primarchs.group(
+                                    (item, array, index) => 
+                                        item.isLoyal ? 'loyal' : 'traitor';
+                                  )
+                                  // => { loyal: [ { name: 'Leman Russ', isLoyal: true },...],
+                                  //        traitor: [ { name: 'Horus', isLoyal: false },...]
+                                  //     }
+                              </code>
+                        </pre>
+                        <pre class="fragment">
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|4-6|8-9">
+                                  const loyal = {loyal: true};
+                                  const traitor = {traitor: true};
+
+                                  const primarchsMap = primarchs.groupToMap(
+                                      (item, array, index) => item.isLoyal ? loyal : traitor;
+                                  ) // => Map
+
+                                  primarchsMap.get(loyal) // => [ { name: 'Leman Russ', isLoyal: true },...];
+                                  primarchsMap.get(traitor) // => [ { name: 'Horus', isLoyal: false },...];
+
+                              </code>
+                        </pre>
+                    </section>
+                </section>
+                <!-- proposal-duplicate-named-capturing-groups -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-duplicate-named-capturing-groups"
+                                target="_blank"
+                                >Stage 3 -<br />
+                                proposal-duplicate-named-capturing-groups</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        yyyy-mm-dd<br />
+                        mm/dd/yyyy<br />
+                        dd.mm/yyyy
+                    </section>
+                    <section>
+                        <img
+                            src="img/reg/reg1.png"
+                            alt="регулярное выражение с повторяющейся группой"
+                        />
+                        <img
+                            src="img/reg/reg2.png"
+                            alt="ошибка повторяющихся групп в регулярном выражении"
+                            class="fragment"
+                        />
+                        <img
+                            src="img/reg/reg3.png"
+                            alt="регулярное выражение с разными названиями групп"
+                            class="fragment"
+                        />
+                    </section>
+                    <section>
+                        <img
+                            src="img/reg/reg4.png"
+                            alt="регулярное выражение без ошибки с повтояющейся группой"
+                            style="border: 5px solid greenyellow"
+                        />
+                        <aside class="notes">
+                            Упомянуть что одинаковые имена группу будут
+                            разрешены только между разделительным знаком
+                        </aside>
+                    </section>
+                </section>
+                <!-- proposal-json-modules -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-json-modules"
+                                target="_blank"
+                                >Stage 3 -<br />
+                                proposal-json-modules</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape>
+                                 import config from './config.json';
+                                 console.log(config.username);
+                            </code>
+                         </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                        >
+                            Failed to load module script: Expected a JavaScript
+                            module script but the server responded with a MIME
+                            type of "application/json". Strict MIME type
+                            checking is enforced for module scripts per HTML
+                            spec.
+                        </blockquote>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1">
+                                 import config from './config.json' assert {type: 'json'};
+                            </code>
+                         </pre>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1">
+                                 const config = import('./config.json' assert {type: 'json'});
+                                 config.then( data =>
+                                    data.default.forEach(param => {
+                                        console.log(param);
+                                 })
+                                 )
+                            </code>
+                         </pre>
+                        <pre class="fragment">
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
+                                new Worker('app.wasm', {
+                                    type: 'module',
+                                    assert: {type: 'webassembly'}
+                                 })
+                            </code>
+                         </pre>
+                    </section>
+                </section>
+                <!-- proposal-record-tuple -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-record-tuple"
+                                target="_blank"
+                                >Stage 2 -<br />
+                                proposal-record-tuple</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <h3>8 основных типов в JavaScript:</h3>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                            "
+                        >
+                            <table>
+                                <tr>
+                                    <td>Number</td>
+                                </tr>
+                                <tr>
+                                    <td>BigInit</td>
+                                </tr>
+                                <tr>
+                                    <td>String</td>
+                                </tr>
+                                <tr>
+                                    <td>Boolean</td>
+                                </tr>
+                                <tr>
+                                    <td>Null</td>
+                                </tr>
+                                <tr>
+                                    <td>Undefined</td>
+                                </tr>
+                                <tr>
+                                    <td>Symbol</td>
+                                </tr>
+                                <tr>
+                                    <td>Object</td>
+                                </tr>
+                            </table>
+
+                            <b class="fragment">+</b>
+
+                            <table style="color: greenyellow" class="fragment">
+                                <tr>
+                                    <td>Record</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuple</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
+                                  let game = #{
+                                    name: 'Age of Sigmar',
+                                    tags: #['wargame', 'Games Workshop', 'Fantasy']
+                                  };
+                                  
+                                  let alliances = #['Order', 'Chaos', 'Death', 'Destruction'];
+                              </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="4" >
+                                    let game = #{
+                                        name: 'Age of Sigmar',
+                                        tags: #['wargame', 'Games Workshop', 'Fantasy'],
+                                        stores: {anyKey: 'any Value'}
+                                    };
+                              </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "TypeError: cannot use an object as a value in a
+                            record"
+                        </blockquote>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape >
+                                let alliances = #['Order', {anyKey: 'any Value'}];
+                            </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "TypeError: cannot use an object as a value in a
+                            tuple"
+                        </blockquote>
+                    </section>
+                    <section>
+                        <pre>
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="6" >
+                                    let game = #{
+                                        name: 'Age of Sigmar',
+                                        tags: #['wargame', 'Games Workshop', 'Fantasy'],
+                                    };
+
+                                    game.name = 'Warhammer';
+                              </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "Cannot assign to read only property 'name' of
+                            object '[object Object]'"
+                        </blockquote>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3" >
+                                let alliances = #['Order', 'Chaos', 'Death', 'Destruction'];
+
+                                alliances[0] = 'Any Text';
+                            </code>
+                        </pre>
+                        <blockquote
+                            style="color: red; font-style: normal"
+                            class="fragment"
+                            data-fragment-index="1"
+                        >
+                            "Cannot assign to read only property '0' of object
+                            '[object Tuple]'"
+                        </blockquote>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
+                                const game = { name: 'Warhammer' };
+
+                                console.log(game === { name: 'Warhammer' }); // false;
+                            </code>
+                        </pre>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape >
+                                console.log(
+                                    JSON.stringify(game) === JSON.stringify({ name: 'Warhammer' })
+                                ); // true;
+                            </code>
+                        </pre>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape >
+                                const game1 = { name: 'Age of Sigmar', company: 'Games Workshop' };
+                                const game2 = { company: 'Games Workshop', name: 'Age of Sigmar' };
+
+                                console.log(JSON.stringify(game1) === JSON.stringify(game2));
+                                // false;
+                            </code>
+                        </pre>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="5">
+                                const game1 = { name: 'Age of Sigmar', company: 'Games Workshop' };
+                                const game2 = { company: 'Games Workshop', name: 'Age of Sigmar' };
+
+                                // lodash
+                               .isEqual(game1, game2); // true
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape >
+                                #{name: 'Sigmar'} === #{name: 'Sigmar'} // true
+
+                                #['Order', 'Chaos'] === #['Order', 'Chaos'] // true
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3 style="color: greenyellow">Зачем?</h3>
+                    </section>
+                    <section>
+                        <span class="fragment semi-fade-out">
+                            <span class="fragment fade-out">
+                                <img
+                                    src="img/record/1.png"
+                                    alt="Immutable.js logo"
+                                    style="margin-bottom: 30px"
+                                />
+                                <img src="img/record/2.png" alt="Immer logo" />
+                            </span>
+                        </span>
+                    </section>
+                </section>
+                <!-- -->
+                <!-- temporal -->
+                <section>
+                    <section>
+                        <h3>Когда работа с датами станет удобнее?</h3>
+                    </section>
+                    <section>
+                        <h4>Moment.js</h4>
+                        <h4>Date-fns</h4>
+                        <h4>Day.js</h4>
+                    </section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://tc39.es/proposal-temporal/docs/"
+                                target="_blank"
+                                >Temporal</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <table style="font-size: 2rem">
+                            <tbody>
+                                <tr>
+                                    <td style="color: greenyellow">
+                                        Temporal.Now
+                                    </td>
+                                    <td>
+                                        .instant().epochSeconds<br />
+                                        .instant().epochMilliseconds<br />
+                                        .timeZone().zonedDateTimeISO()<br />
+                                        .zonedDateTimeISO(zone)<br />
+                                        .plainDateTimeISO()<br />
+                                        .plainDateISO()<br />
+                                        .plainTimeISO()
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color: greenyellow">
+                                        Temporal.Instant
+                                    </td>
+                                    <td>ISO 8601</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: greenyellow">
+                                        Temporal.PlainDate
+                                    </td>
+                                    <td>
+                                        Year, Month, Day, Hour, Minute, Second
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color: greenyellow">
+                                        Temporal.ZonedDate
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <pre style="width: 100%">
+                             <code class="javascript"  data-trim data-noescape>
+                                 const date = Temporal.Now.zonedDateTimeISO();
+
+                                 const { year, month, day, hour,minute, second, milisecond } = date;
+
+                                 console.log(
+                                     year,      // 2023
+                                     month,     // 4
+                                     day,       // 19
+                                     hour,      // 21
+                                     minute,    // 48
+                                     second,    // 50
+                                     milisecond // 256
+                                 );
+                            </code>
+                         </pre>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape>
+                                 const {
+                                    dayOfWeek, dayOfYear, weekOfYear,
+                                    daysInMonth, daysInYear,inLeapYear
+                                 } = date;
+
+                                 console.log(
+                                    dayOfWeek,   // 3
+                                    dayOfYear,   // 109
+                                    weekOfYear,  // 16
+                                    daysInMonth, // 30
+                                    daysInYear,  // 365
+                                    inLeapYear   // false
+                                 );
+                            </code>
+                         </pre>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="6-8">
+                                 const now = Temporal.Now.plainDateISO();
+
+                                 const pastDate = Temporal.PlainDate.from('2021-03-12');
+                                 const futureDate = Temporal.PlainDate.from('2023-08-15');
+
+                                 Temporal.PlainDateTime.compare(now, pastDate)    // 1
+                                 Temporal.PlainDateTime.compare(now, futureDate)  // -1
+                                 Temporal.PlainDateTime.compare(now, now)         // 0
+
+                             </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre style="width: 100%">
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1|3-5|7">
+                                 const today = Temporal.PlainDate.from('2023-04-19'); // 2023-04-19
+
+                                 const tomorrow = today.add({days: 1})                // 2023-04-20
+                                 const monthAgo = today.substract({months: 1})        // 2023-03-19
+                                 const yearAgo = today.substract({years: 1})          // 2022-04-19
+
+                                 console.log(today.toJSON())                          // 2023-04-19
+                             </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre style="width: 100%">
+                            <code class="javascript"  data-trim data-noescape  data-line-numbers="1-4|7">
+                                const duration = Temporal.Duration.from({
+                                    minutes: 10,
+                                    seconds: 52
+                                });
+
+                                const durationInDays = duration.round({
+                                    smallestUnit: 'munites' // PT11M
+                                })
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre style="width: 100%">
+                            <code class="javascript"  data-trim data-noescape  >
+                                const today = Temporal.PlainDate.from('2023-04-19');
+                                
+                                console.log(today.toLocaleString()); // 19.04.2023
+                                console.log(today.toJSON());         // 2023-04-19
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>В чем подвох?</h3>
+                    </section>
+                    <section data-background-image="img/souls.png">
+                        <h3 style="color: red">Форматирование не завезли</h3>
+                    </section>
+                </section>
+                <!-- proposal-pipeline-operator -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-pipeline-operator"
+                                target="_blank"
+                                >Stage 2 -<br />
+                                proposal-pipeline-operator</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                            "
+                        >
+                            <div>three( two( one( value ) ) )</div>
+                            <b style="color: greenyellow">VS</b>
+                            <div>value.one().two().three()</div>
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="0|3|4-5|6|2,8-10|1-11" >
+                                console.log(
+                                    chalk.dim(
+                                        `$ ${Object.keys(envar)
+                                            .map(envar) =>
+                                                `${envar}=${envars[envar]}`)
+                                            .join(' ')
+                                        }`,
+                                        'node',
+                                        args.join(' ')));
+                                    )
+                                )
+                            </code>
+                        </pre>
+                        <h3 class="fragment">|></h3>
+                        <pre class="fragment">
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1|2|3|4|5|6" >
+                                Object.keys(envars)
+                                .map(envar) => `${envar}=${envars[envar]}`)
+                                .join(' ')
+                                |> `$ #{%}`
+                                |> chalk.dim(%, 'node', args.join(' ' ))
+                                |> console.log(%)
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h3>%</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="4-6" >
+                                Object.keys(envars)
+                                .map(envar) => `${envar}=${envars[envar]}`)
+                                .join(' ')
+                                |> `$ #{%}`
+                                |> chalk.dim(%, 'node', args.join(' ' ))
+                                |> console.log(%)
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <!-- proposal-decorators -->
+                <!-- proposal-pipeline-operator -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://github.com/tc39/proposal-decorators"
+                                target="_blank"
+                                >Stage 3 -<br />
+                                proposal-decorators</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3,5|4,8" >
+                                function logDuration(fn) {
+                                    return function decorator(...args) {
+                                        let start = Date.now();
+                                        let result = fn.apply(this, args);
+                                        let duration = Date.now - start;
+
+                                        console.log(fn.name + '() duration: ' + duration);
+                                        return result;
+                                    };
+                                };
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <img
+                            src="img/decorators/1.png"
+                            alt="Мы слишком долго ждали декораторов"
+                        />
+
+                        <p>
+                            4 итерации <br />
+                            7 лет разработки <br />
+                            Уже 2 legacy-имплементации
+                        </p>
+                        <p class="fragment" data-fragment-index="1"><b>↓</b></p>
+                        <p class="fragment" data-fragment-index="1">
+                            <b style="color: greenyellow">Stage 3</b>
+                        </p>
+                    </section>
+                    <section>
+                        <table
+                            cellspacing="0"
+                            cellpadding="0"
+                            style="border: 0"
+                        >
+                            <tr>
+                                <td
+                                    class="fragment highlight-red"
+                                    data-fragment-index="1"
+                                    style="border: 0"
+                                >
+                                    Возможность через прототип влиять на объект
+                                    декорирования
+                                </td>
+                                <td
+                                    class="fragment"
+                                    data-fragment-index="1"
+                                    style="color: greenyellow; border: 0"
+                                >
+                                    Работают только с объектом декорирования, а
+                                    не с дескрипторами
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="fragment highlight-red"
+                                    data-fragment-index="1"
+                                    style="border: 0"
+                                >
+                                    Проблемы производительности
+                                </td>
+                                <td
+                                    class="fragment"
+                                    data-fragment-index="1"
+                                    style="color: greenyellow; border: 0"
+                                >
+                                    Работают только с классами и их элементами
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 0"></td>
+                                <td
+                                    class="fragment"
+                                    data-fragment-index="1"
+                                    style="border: 0"
+                                >
+                                    Новый объект декорирования - accessor
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="typescript"  data-trim data-noescape data-line-numbers="3-13|4|5|6-9|10-11" >
+                                 type Decorator = (
+                                    value: Input,
+                                    context: {
+                                        kind: string;
+                                        name: string | symbol;
+                                        access: {
+                                            get?(): unknown;
+                                            set?(value: unknown): void;
+                                        };
+                                        private?: boolean;
+                                        static?: boolean;
+                                        addInitializer?(initializer: () => void): void;
+                                    }
+                                 ) => Output | void;
+                             </code>
+                         </pre>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/decorators-proposal-demo-325rc7?file=/src/index.js"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fdecorators-proposal-demo-325rc7%3Ffile%3D%2Fsrc%2Findex.js&10&0"
+                                width="450"
+                                height="450"
+                                title="QR код"
+                                alt="Idle detection demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                    <section>
+                        <h3>Какие декораторы использовать сейчас?</h3>
+                    </section>
+                    <section>
+                        <blockquote>
+                            <b style="color: red">
+                                "The old thing is deprecated, <br />and the new
+                                thing is not ready yet!"</b
+                            >
+                        </blockquote>
+                    </section>
+                </section>
+                <!--Proposals end-->
+                <!--Web APIs start-->
+                <section>
+                    <section>
+                        <h3>Не одним JavaScript-ом едины</h3>
+                    </section>
+                    <section>
+                        <img src="img/mdn.png" alt="mdn" />
+                    </section>
+                    <section>
+                        <div style="display: flex; justify-content: center">
+                            <a
+                                href="https://wicg.io/"
+                                style="
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                "
+                                ><img
+                                    src="img/wicg/1.png"
+                                    alt="WICG logo"
+                                    style="margin-right: 20px"
+                                />
+                                <p>Web Incubator CG</p></a
+                            >
+                        </div>
+                        <aside class="notes">
+                            Веб инкубатор CG - часть W3С - большого консорциума
+                            интернета
+                        </aside>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img src="img/wicg/2.png" alt="wic proposals" />
+                            <img
+                                src="img/wicg/3.png"
+                                class="fragment"
+                                alt="wic proposals"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <img
+                            src="img/wicg/4.png"
+                            alt="кот с руками"
+                            style="max-height: 400px"
+                        />
+                        <p>К интересному</p>
+                    </section>
+                    <section>
+                        <h3 style="color: greenyellow">Дисклеймер</h3>
+                        <p>
+                            Следующие Web API поддерживаются еще не всеми
+                            браузерами 🧪.<br />
+                            Перед использованием убедитесь, что поддерживаются
+                            нужные вам платформы
+                        </p>
+                    </section>
+                </section>
+                <!-- Idle Detection API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API"
+                                target="_blank"
+                                >Idle Detection API</a
+                            >
+                            <div></div>
+                        </h3>
+                    </section>
+                    <section>
+                        <img
+                            src="img/idle/1.png"
+                            alt="idle detection in windows"
+                        />
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                Защита коммерческой информации (например,
+                                открытие в новом окне)
+                            </li>
+                            <li>Оптимизация ресурсов клиента</li>
+                            <li>
+                                Уведомление пользователя только когда он «в
+                                фокусе» на сайте
+                            </li>
+                            <li>Аналитика</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape>
+                                const { userState, screenState } = idleDetector();
+                            </code>
+                        </pre>
+                        <table>
+                            <tr>
+                                <td>userState</td>
+                                <td style="color: red; border-color: white">
+                                    idle
+                                </td>
+                                <td
+                                    style="
+                                        color: greenyellow;
+                                        border-color: white;
+                                    "
+                                >
+                                    active
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>screenState</td>
+                                <td style="color: red; border-color: white">
+                                    locked
+                                </td>
+                                <td
+                                    style="
+                                        color: greenyellow;
+                                        border-color: white;
+                                    "
+                                >
+                                    unlocked
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="2|11|13-17|20" >
+                                if ('IdleDetector' in window) {
+                                    const state = await IdleDetector.requestPermission();
+
+                                    if (state !== 'granted'){
+                                        console.log('User denied access for idle detection');
+                                    } else {
+                                        try {
+                                            const controller = new AbortController();
+                                            const signal = controller.signal;
+
+                                            const idleDetector = new IdleDetector();
+
+                                            idleDetector.addEventListener("change", () => {
+                                              const userState = idleDetector.userState;
+                                              const screenState = idleDetector.screenState;
+                                              console.log(`Idle change: ${userState}, ${screenState}.`);
+                                            });
+
+                                            await idleDetector.start({
+                                              threshold: 60_000,
+                                              signal,
+                                            });
+                                            console.log("IdleDetector is active.");
+                                        } catch (err) {
+                                            console.error(err);
+                                        }
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/idle-detection-api-demo-k8xkud?file=/src/idle_detection.js"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fidle-detection-api-demo-k8xkud%3Ffile%3D%2Fsrc%2Fidle_detection.js&10&0"
+                                width="450"
+                                height="450"
+                                title="QR код"
+                                alt="Idle detection demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                    <section>
+                        <img
+                            src="img/idle/2.png"
+                            alt="IdleDetection browsers"
+                        />
+                    </section>
+                </section>
+                <!-- Screen Wake Lock API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API"
+                                target="_blank"
+                                >Screen Wake Lock API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Пользователь готовит по рецепту</li>
+                            <li>Использование навигатора</li>
+                            <li>
+                                Использование приложения с управлением голосом
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1|5-6" >
+                                if ("wakeLock" in navigator) {
+                                    let wakeLock = null;
+
+                                    try {
+                                        wakeLock = await navigator.wakeLock.request("screen");
+                                        console.log("Wake Lock is active!");
+                                    } catch (err) {
+                                        console.error(`${err.name}, ${err.message}`);
+                                    }
+
+                                } else {
+                                    console.error("Wake lock is not supported by this browser.");
+                                }
+                              </code>
+                          </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-5" >
+                                // снять блокировку пробуждения
+
+                                wakeLock.release().then(() => {
+                                    wakeLock = null;
+                                });
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-5" >
+                                // среагировать на пробуждение
+
+                                wakeLock.addEventListener('release', () => {
+                                    console.log('Hello, user!');
+                                });
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <img
+                            src="img/wakelock/1.png"
+                            alt="конь грустит потому что wakelock не сработал"
+                        />
+                    </section>
+                    <section>
+                        <img src="img/wakelock/2.png" alt="wakelock browsers" />
+                    </section>
+                </section>
+                <!-- HTML Sanitizer API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API"
+                                target="_blank"
+                                >HTML Sanitizer API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <img src="img/sanitizer/1.png" alt="XSS attacks" />
+                    </section>
+                    <section>
+                        <img
+                            src="img/sanitizer/2.png"
+                            alt="packages for sanitize"
+                        />
+                    </section>
+                    <section>
+                        <h3>Element.setHTML()</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|4|7|9" >
+                                const initialString =
+                                    "any <\script>alert('За Альянс!')<" + "/script> text";
+
+                                const sanitizer = new Sanitizer();
+
+                                const target = document.getElementsById('target');
+                                target.setHTML(initialString, {sanitizer})
+
+                                console.log(target.innerHTML); // any text
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Element.sanitizeFor()</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="1-2|6-7|9-10|12-13" >
+                                const initialString =
+                                    "any <\script>alert('За Альянс!')<" + "/script> text";
+
+                                const sanitizer = new Sanitizer();
+
+                                const sanitizedString =
+                                    sanitizer.sanitizeFor('div', initialString);
+
+                                console.log(sanitizedString instanceof HTMLDivElement);
+                                // true
+
+                                document.querySelector('div#target')
+                                .replaceChildren(sanitizedString)
+
+
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Element.sanitizeFor()</h3>
+                        <pre>
+                            <code class="javascript"  data-trim data-noescape data-line-numbers="3-4|6|7" >
+                                const sanitizer = new Sanitizer();
+
+                                const iframe = document.getElementById('userFrame');
+                                const treeFromIframe = iframe.contentWindow.document;
+
+                                const sanitizedIframeTree = sanitizer.sanitize(treeFromIframe);
+                                iframe.replaceChildren(sanitizedIframeTree);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img
+                                src="img/sanitizer/3.png"
+                                alt="sanitizer config"
+                            />
+                            <img
+                                class="fragment"
+                                src="img/sanitizer/4.png"
+                                alt="sanitizer config"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/sanitizerapi-example-q0c7qk?file=/src/index.js"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fsanitizerapi-example-q0c7qk%3Ffile%3D%2Fsrc%2Findex.js&10&0"
+                                width="450"
+                                height="450"
+                                title="QR код"
+                                alt="Sanitizer API demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                    <section>
+                        <img
+                            src="img/sanitizer/5.png"
+                            alt="Sanitizer API browsers"
+                        />
+                    </section>
+                </section>
+                <!-- CSS Custom Highlight API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API"
+                                target="_blank"
+                                >CSS Custom Highlight API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <a href="https://doka.guide/search/" target="_blank">
+                            <img src="img/highlight/1.png" alt="Doka" />
+                        </a>
+                    </section>
+                    <section>
+                        <img
+                            src="img/highlight/2.png"
+                            alt="Highlight packages"
+                        />
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-between;
+                            "
+                        >
+                            <ul style="margin-right: 50px">
+                                <li>Больше зависимостей</li>
+                                <li>Доп обертка в DOM</li>
+                            </ul>
+                            <img
+                                src="img/highlight/3.png"
+                                alt="highlight dom"
+                                style="width: 50%"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="1|3-5,7-9|11|12" >
+                                 const text = document.getElementById('root');
+                                 
+                                 const range1 = new Range();
+                                 range1.setStart(text, 10);
+                                 range1.setEnd(text, 15);
+                                 
+                                 const range2 = new Range();
+                                 range2.setStart(text, 18);
+                                 range2.setEnd(text, 21);
+
+                                 const highlight = new Highlight(...ranges.flat());
+                                 CSS.highlights.set("search-highlight", highlight);
+                             </code>
+                         </pre>
+                        <pre class="fragment">
+                            <code class="css"  data-trim data-noescape data-line-numbers="1|2-3" >
+                                ::highlight(search-highlight) {
+                                    background-color: green;
+                                    color: white;
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/css-custom-highlight-phlzss?file=/src/index.js:1306-1359"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fcss-custom-highlight-phlzss%3Ffile%3D%2Fsrc%2Findex.js%3A1306-1359&10&0"
+                                width="450"
+                                height="450"
+                                title="QR код"
+                                alt="СSS Custom Highlight demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                    <section>
+                        <img
+                            src="img/highlight/4.png"
+                            alt="CSS Custom Highlight browsers"
+                        />
+                    </section>
+                </section>
+                <!-- View Transitions API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API"
+                                target="_blank"
+                                >View Transitions API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img
+                                src="img/transition/1.gif"
+                                alt="react-transition"
+                            />
+                            <img
+                                class="fragment"
+                                src="img/transition/2.png"
+                                alt="transition packages"
+                            />
+                            <img
+                                class="fragment"
+                                src="img/transition/3.png"
+                                alt="there are not many packages"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <video
+                            data-autoplay
+                            src="https://storage.googleapis.com/web-dev-uploads/video/CZmpGM8Eo1dFe0KNhEO9SGO8Ok23/hgnJfPFUbGlucFegEEtl.mp4"
+                        ></video>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="css"  data-trim data-noescape data-line-numbers="1,6" >
+                                ::view-transition-old(root) {
+                                  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+                                    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+                                }
+
+                                ::view-transition-new(root) {
+                                  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+                                    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+                                }
+                            </code>
+                         </pre>
+                        <div
+                            class="fragment"
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                            "
+                        >
+                            <img
+                                src="img/transition/5.png"
+                                alt="transitionCustomDiv"
+                                style="width: 40%; margin-right: 10px"
+                            />
+                            <img
+                                src="img/transition/6.png"
+                                alt="customDivStyles"
+                                style="width: 40%; margin-left: 10px"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                            "
+                        >
+                            <a
+                                href="https://codesandbox.io/s/without-transitions-058qs1"
+                                target="_blank"
+                                style="margin-right: 20px"
+                            >
+                                <img
+                                    src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fwithout-transitions-058qs1&6&0"
+                                    width="250"
+                                    height="250"
+                                    title="QR код"
+                                    alt="without transition demo"
+                                />
+                                <p>Без анимации</p>
+                            </a>
+                            <a
+                                href="https://codesandbox.io/s/view-transitions-warhammer-example-d19lcz"
+                                target="_blank"
+                                style="margin-left: 20px"
+                            >
+                                <img
+                                    src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fview-transitions-warhammer-example-d19lcz&6&0"
+                                    width="250"
+                                    height="250"
+                                    title="QR код"
+                                    alt="without transition demo"
+                                />
+                                <p>С анимацией</p>
+                            </a>
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="react"  data-trim data-noescape data-line-numbers="13" >
+                                 const [state, setState] = useState(0);
+
+                                 const generateNumber = () => Math.floor(Math.random() * 100);
+
+                                 const handleGenerateNumber = () => {
+                                    const newNumber = generateRandomNumber();
+
+                                     if(!document.startViewTransition) {
+                                        setState(newNumber);
+                                        return;
+                                     }
+
+                                    document.startViewTransition(() => setState(newNumber));
+                                 };
+                             </code>
+                         </pre>
+                        <a
+                            href="https://codesandbox.io/s/view-transitions-handle-click-nzi8u4?file=/src/App.js"
+                            >Демо</a
+                        >
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    flex-grow: 1;
+                                "
+                            >
+                                <p
+                                    class="fragment fade-out"
+                                    data-fragment-index="1"
+                                >
+                                    startViewTransition()
+                                </p>
+                                <img
+                                    src="img/transition/7.png"
+                                    alt="transitionStart"
+                                    width="200"
+                                />
+                                <p class="fragment" data-fragment-index="3">
+                                    Opacity:1 -> Opacity: 0
+                                </p>
+                            </div>
+                            <div style="flex-grow: 1; margin: 0 10px">
+                                <ol>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="1"
+                                    >
+                                        Вычисления...
+                                    </li>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="2"
+                                    >
+                                        Построение нового DOM
+                                    </li>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="3"
+                                    >
+                                        Переход
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    flex-grow: 1;
+                                "
+                            >
+                                <p style="opacity: 0">empty</p>
+                                <img
+                                    class="fragment"
+                                    data-fragment-index="2"
+                                    src="img/transition/8.png"
+                                    alt="transitionEnd"
+                                    width="200"
+                                />
+                                <p class="fragment" data-fragment-index="3">
+                                    Opacity:0 -> Opacity: 1
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <a
+                            href="https://codesandbox.io/s/view-transitions-lazy-example-9wcf6h?file=/src/styles.css"
+                            target="_blank"
+                        >
+                            <img
+                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fview-transitions-lazy-example-9wcf6h%3Ffile%3D%2Fsrc%2Fstyles.css&10&0"
+                                width="450"
+                                height="450"
+                                title="QR код"
+                                alt="Idle detection demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                </section>
+                <!--Web APIs end-->
+                <!-- ending start-->
+                <section>
+                    <section>
+                        <h3 style="color: greenyellow">Выводы...</h3>
+                    </section>
+                    <section data-background-image="img/bean.png"></section>
+                    <section>
+                        <img
+                            class="fragment fade-in-then-out"
+                            src="img/fade.png"
+                            alt="the web is improving"
+                        />
+                    </section>
+
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-around;
+                            "
+                        >
+                            <div>
+                                <img
+                                    src="img/me.png"
+                                    width="250"
+                                    alt="Мария Кондаурова"
+                                    style="
+                                        border-radius: 50%;
+                                        border: 5px solid white;
+                                    "
+                                />
+                                <p>BIOCAD</p>
+                            </div>
+
+                            <table>
+                                <tr>
+                                    <td>telegram</td>
+                                    <td>@Momomash</td>
+                                </tr>
+                                <tr>
+                                    <td>github</td>
+                                    <td>@Momomash</td>
+                                </tr>
+                                <tr>
+                                    <td>twitter</td>
+                                    <td>@mari_momos</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </ul>
+            <!-- finish! -->
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                transition: 'none',
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            })
+        </script>
+    </body>
+</html>
