@@ -1544,6 +1544,232 @@
                         />
                     </section>
                 </section>
+                <!-- View Transitions API -->
+                <section>
+                    <section>
+                        <h3>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API"
+                                target="_blank"
+                                >View Transitions API</a
+                            >
+                        </h3>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img
+                                src="img/transition/1.gif"
+                                alt="react-transition"
+                            />
+                            <img
+                                class="fragment"
+                                src="img/transition/2.png"
+                                alt="transition packages"
+                            />
+                            <img
+                                class="fragment"
+                                src="img/transition/3.png"
+                                alt="there are not many packages"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <video
+                            data-autoplay
+                            src="https://storage.googleapis.com/web-dev-uploads/video/CZmpGM8Eo1dFe0KNhEO9SGO8Ok23/hgnJfPFUbGlucFegEEtl.mp4"
+                        ></video>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="css"  data-trim data-noescape data-line-numbers="1,6" >
+                                ::view-transition-old(root) {
+                                  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+                                    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+                                }
+
+                                ::view-transition-new(root) {
+                                  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+                                    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+                                }
+                            </code>
+                         </pre>
+                        <div
+                            class="fragment"
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                            "
+                        >
+                            <img
+                                src="img/transition/5.png"
+                                alt="transitionCustomDiv"
+                                style="width: 40%; margin-right: 10px"
+                            />
+                            <img
+                                src="img/transition/6.png"
+                                alt="customDivStyles"
+                                style="width: 40%; margin-left: 10px"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                            "
+                        >
+                            <a
+                                href="https://codesandbox.io/s/without-transitions-058qs1"
+                                target="_blank"
+                                style="margin-right: 20px"
+                            >
+                                <img
+                                    src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fwithout-transitions-058qs1&6&0"
+                                    width="250"
+                                    height="250"
+                                    title="QR код"
+                                    alt="without transition demo"
+                                />
+                                <p>Без анимации</p>
+                            </a>
+                            <a
+                                href="https://codesandbox.io/s/view-transitions-warhammer-example-d19lcz"
+                                target="_blank"
+                                style="margin-left: 20px"
+                            >
+                                <img
+                                    src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fview-transitions-warhammer-example-d19lcz&6&0"
+                                    width="250"
+                                    height="250"
+                                    title="QR код"
+                                    alt="without transition demo"
+                                />
+                                <p>С анимацией</p>
+                            </a>
+                        </div>
+                    </section>
+                    <section>
+                        <pre>
+                             <code class="react"  data-trim data-noescape data-line-numbers="13" >
+                                 const [state, setState] = useState(0);
+
+                                 const generateNumber = () => Math.floor(Math.random() * 100);
+
+                                 const handleGenerateNumber = () => {
+                                    const newNumber = generateRandomNumber();
+
+                                     if(!document.startViewTransition) {
+                                        setState(newNumber);
+                                        return;
+                                     }
+
+                                    document.startViewTransition(() => setState(newNumber));
+                                 };
+                             </code>
+                         </pre>
+                        <a
+                            href="https://codesandbox.io/s/view-transitions-handle-click-nzi8u4?file=/src/App.js"
+                            >Демо</a
+                        >
+                    </section>
+                    <section>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    flex-grow: 1;
+                                "
+                            >
+                                <p
+                                    class="fragment fade-out"
+                                    data-fragment-index="1"
+                                >
+                                    startViewTransition()
+                                </p>
+                                <img
+                                    src="img/transition/7.png"
+                                    alt="transitionStart"
+                                    width="200"
+                                />
+                                <p class="fragment" data-fragment-index="3">
+                                    Opacity:1 -> Opacity: 0
+                                </p>
+                            </div>
+                            <div style="flex-grow: 1; margin: 0 10px">
+                                <ol>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="1"
+                                    >
+                                        Вычисления...
+                                    </li>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="2"
+                                    >
+                                        Построение нового DOM
+                                    </li>
+                                    <li
+                                        class="fragment"
+                                        data-fragment-index="3"
+                                    >
+                                        Переход
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    flex-grow: 1;
+                                "
+                            >
+                                <p style="opacity: 0">empty</p>
+                                <img
+                                    class="fragment"
+                                    data-fragment-index="2"
+                                    src="img/transition/8.png"
+                                    alt="transitionEnd"
+                                    width="200"
+                                />
+                                <p class="fragment" data-fragment-index="3">
+                                    Opacity:0 -> Opacity: 1
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <a
+                                href="https://codesandbox.io/s/view-transitions-lazy-example-9wcf6h?file=/src/styles.css"
+                                target="_blank"
+                        >
+                            <img
+                                    src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fview-transitions-lazy-example-9wcf6h%3Ffile%3D%2Fsrc%2Fstyles.css&10&0"
+                                    width="450"
+                                    height="450"
+                                    title="QR код"
+                                    alt="Idle detection demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
+                    </section>
+                </section>
 
                 <!--Web APIs end-->
 
