@@ -1268,7 +1268,7 @@
                         />
                     </section>
                     <section>
-                        <ul>
+                        <ul style="list-style: none">
                             <li>
                                 Защита коммерческой информации (например,
                                 открытие в новом окне)
@@ -1386,7 +1386,7 @@
                         </h3>
                     </section>
                     <section>
-                        <ul>
+                        <ul style="list-style: none;">
                             <li>Пользователь готовит по рецепту</li>
                             <li>Использование навигатора</li>
                             <li>
@@ -1416,7 +1416,7 @@
                     <section>
                         <pre>
                             <code class="javascript"  data-trim data-noescape data-line-numbers="3-5" >
-                                // снять блокировку пробуждения
+                                // отключить блокировку экрана
 
                                 wakeLock.release().then(() => {
                                     wakeLock = null;
@@ -1502,7 +1502,7 @@
                         </pre>
                     </section>
                     <section>
-                        <h3>Element.sanitizeFor()</h3>
+                        <h3>Element.sanitize()</h3>
                         <pre>
                             <code class="javascript"  data-trim data-noescape data-line-numbers="3-4|6|7" >
                                 const sanitizer = new Sanitizer();
@@ -1519,11 +1519,6 @@
                         <div class="r-stack">
                             <img
                                 src="img/sanitizer/3.png"
-                                alt="sanitizer config"
-                            />
-                            <img
-                                class="fragment"
-                                src="img/sanitizer/4.png"
                                 alt="sanitizer config"
                             />
                         </div>
@@ -1770,6 +1765,7 @@
                          </pre>
                         <a
                             href="https://codesandbox.io/s/view-transitions-handle-click-nzi8u4?file=/src/App.js"
+                            target="_blank"
                             >Демо</a
                         >
                     </section>
