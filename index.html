@@ -18,11 +18,9 @@
         <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
         <!-- todo: Добавить в темпорал заголовки к преимуществам -->
-        <!-- todo: После дат вставить ответ на вопрос - когда? -->
         <!-- todo: Переделать слайды с поддержкой (5 иконок и зеленые галки/крестик ) -->
         <!-- todo: Про регурярки - сначала решение, потом проблема -->
         <!-- todo: рассказать про Interop в конце про автостопом -->
-
     </head>
     <body>
         <div class="reveal">
@@ -967,7 +965,17 @@
                     <section data-background-image="img/souls.png">
                         <h3 style="color: red">Форматирование не завезли</h3>
                     </section>
-                    <!--todo: Добавить слайд с ответом на вопрос - когда? -->
+                    <section>
+                        <h3>Когда?</h3>
+                        <p class="fragment">Stage 3</p>
+                        <p class="fragment">2 полифилла</p>
+                        <blockquote class="fragment">
+                            "-Most likely it'll be a part of the next edition."
+                            <footer>
+                                <cite title="Ujjwal Sharma">Ujjwal Sharma</cite>
+                            </footer>
+                        </blockquote>
+                    </section>
                 </section>
                 <!-- proposal-pipeline-operator -->
                 <section>
@@ -1071,7 +1079,7 @@
                             src="img/decorators/1.png"
                             alt="Мы слишком долго ждали декораторов"
                             height="280"
-                    />
+                        />
                         <p>
                             4 итерации <br />
                             7 лет разработки <br />
@@ -1083,9 +1091,7 @@
                         </p>
                     </section>
                     <section>
-                        <table
-                            style="border: 0"
-                        >
+                        <table style="border: 0">
                             <tr>
                                 <td
                                     class="fragment highlight-red"
@@ -1179,7 +1185,7 @@
                         </blockquote>
                     </section>
                     <section>
-                        <img src="img/decorators/2.png" alt="логотип babel">
+                        <img src="img/decorators/2.png" alt="логотип babel" />
                         <pre>
                              <code class="typescript"  data-trim data-noescape data-line-numbers="1,5-6" >
                                  // .babelrc
@@ -1474,7 +1480,6 @@
                     </section>
                     <section>
                         <h3>Element.sanitize()</h3>
-                        <!--todo: переделать демо-->
                         <pre>
                             <code class="javascript"  data-trim data-noescape data-line-numbers="3-4|6|7" >
                                 const sanitizer = new Sanitizer();
