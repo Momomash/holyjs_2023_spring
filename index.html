@@ -64,12 +64,9 @@
                                 "
                             />
                             <ul style="list-style: none">
-                                <li>Начинала с верстки за еду</li>
-                                <li>
-                                    Поработала в российском аутсорсе и
-                                    американском энтерпрайзе
-                                </li>
-                                <li><s>Душевно</s> душно ревьюю</li>
+                                <li>Начинала с верстки за еду и CMS</li>
+                                <li>Поработала в российском аутсорсе</li>
+<!--                                <li>todo: описать про биокад и энтерпрайз</li>-->
                             </ul>
                         </div>
                     </section>
@@ -141,10 +138,9 @@
                                 </div>
                             </div>
                             <img class="fragment" src="img/tc39repo.png" />
-                            <img class="fragment" src="img/tc39tests.png" />
+<!--                            <img class="fragment" src="img/tc39tests.png" />-->
                         </div>
                     </section>
-                    <section>Proposals</section>
                     <section>
                         <h3 style="margin-bottom: 0">
                             Жизненный цикл пропоузала
@@ -246,11 +242,12 @@
                     <section style="text-align: left">
                         <pre>
                     <code class="javascript"  data-trim data-noescape data-line-numbers="1|2-3|5">
+<!--                        todo: починить пример-->
                         let primarch = {name: 'Horus'};
                         const weakMap = new WeakMap([[primarch, 'traitor']]);
                         primarch = null;
 
-                        console.log(weakMap.get(primarch))  // undefined
+                        weakMap.get(primarch) // undefined
                     </code>
                         </pre>
 
@@ -259,7 +256,7 @@
                              <code class="javascript"  data-trim data-noescape data-line-numbers="1|2-5|7">
                                 let primarch = {name: 'Horus'};
                                 const map = new Map();
-                                map.set({'primarch': primarch});
+                                map.set(primarch, 'primarch');
 
                                 primarch = null;
 
@@ -331,6 +328,7 @@
                             <div class="fragment">
                                 <pre>
                                      <code class="javascript"  data-trim data-noescape data-line-numbers="0|1,5">
+<!--                                         переписать на for c конца-->
                                         const game = [...games].reverse().find(
                                             ({author}) => author === 'author1'
                                          );
@@ -453,6 +451,14 @@
                     <section>
                         <pre>
                             <code class="javascript"  data-trim data-noescape>
+<!--                                добавить пример с forEach-->
+<!--                                const result = {arr1: [], arr2: []};-->
+
+<!--primarchs.forEach((i) => {-->
+<!--    let target = i.isLoyal ? result.arr1 : result.arr2;-->
+<!--    target.push(i);-->
+<!--})-->
+
                                 const groupedPrimarchs = primarchs.reduce(
                                     (acc, primarch) => {
                                         primarch.isLoyal ? acc.loyal = [...acc.loyal, primarch]
@@ -480,9 +486,6 @@
                                         );
                             </code>
                         </pre>
-                    </section>
-                    <section>
-                        <h4 class="r-fit-text">Можно ли сделать лучше?</h4>
                     </section>
                     <section>
                         <h4 class="r-fit-text" style="margin-bottom: 50px">
@@ -522,6 +525,7 @@
                 </section>
                 <!-- proposal-duplicate-named-capturing-groups -->
                 <section>
+<!--                    поменять местами проблему и решение-->
                     <section>
                         <h3>
                             <a
@@ -734,7 +738,7 @@
                                         tags: #['wargame', 'Games Workshop', 'Fantasy'],
                                     };
 
-                                    game.name = 'Warhammer';
+                                    game.name = 'Fantasy Battles';
                               </code>
                         </pre>
                         <blockquote
@@ -831,6 +835,7 @@
                         <h4>Date-fns</h4>
                         <h4>Day.js</h4>
                     </section>
+<!--                    слайд с темпорал объединить с прошлым-->
                     <section>
                         <h3>
                             <a
@@ -841,6 +846,7 @@
                         </h3>
                     </section>
                     <section>
+<!--                        слайд отстой-->
                         <table style="font-size: 2rem">
                             <tbody>
                                 <tr>
@@ -901,6 +907,7 @@
                     </section>
                     <section>
                         <pre>
+<!--                            сократить примеры-->
                              <code class="javascript"  data-trim data-noescape>
                                  const {
                                     dayOfWeek, dayOfYear, weekOfYear,
@@ -1231,14 +1238,14 @@
                             />
                         </div>
                     </section>
-                    <section>
-                        <img
-                            src="img/wicg/4.png"
-                            alt="кот с руками"
-                            style="max-height: 400px"
-                        />
-                        <p>К интересному</p>
-                    </section>
+<!--                    <section>-->
+<!--                        <img-->
+<!--                            src="img/wicg/4.png"-->
+<!--                            alt="кот с руками"-->
+<!--                            style="max-height: 400px"-->
+<!--                        />-->
+<!--                        <p>К интересному</p>-->
+<!--                    </section>-->
                     <section>
                         <h3 style="color: greenyellow">Дисклеймер</h3>
                         <p>
@@ -1353,6 +1360,7 @@
                         </pre>
                     </section>
                     <section>
+<!--                        начать с демо, добавить в демо таймер-->
                         <a
                             href="https://codesandbox.io/s/idle-detection-api-demo-k8xkud?file=/src/idle_detection.js"
                             target="_blank"
@@ -1434,6 +1442,7 @@
                         </pre>
                     </section>
                     <section>
+                        // переместить коня в декораторы
                         <img
                             src="img/wakelock/1.png"
                             alt="конь грустит потому что wakelock не сработал"
@@ -1503,6 +1512,7 @@
                     </section>
                     <section>
                         <h3>Element.sanitize()</h3>
+<!--                        переделать демо-->
                         <pre>
                             <code class="javascript"  data-trim data-noescape data-line-numbers="3-4|6|7" >
                                 const sanitizer = new Sanitizer();
@@ -1745,6 +1755,7 @@
                         </div>
                     </section>
                     <section>
+<!--                        перенести это демо третьим куаркодом-->
                         <pre>
                              <code class="react"  data-trim data-noescape data-line-numbers="13" >
                                  const [state, setState] = useState(0);
