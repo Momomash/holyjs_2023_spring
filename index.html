@@ -21,6 +21,7 @@
         <div class="reveal">
             <ul class="slides">
                 <!--Вступление-->
+<!--                todo: переделать все qr коды-->
                 <section style="text-align: left">
                     <h2>Что нового в JS и вебе</h2>
                     <br />
@@ -1240,24 +1241,19 @@
                         </h3>
                     </section>
                     <section>
-                        <img
-                            src="img/idle/1.png"
-                            alt="idle detection in windows"
-                        />
-                    </section>
-                    <section>
-                        <ul style="list-style: none">
-                            <li>
-                                Защита коммерческой информации (например,
-                                открытие в новом окне)
-                            </li>
-                            <li>Оптимизация ресурсов клиента</li>
-                            <li>
-                                Уведомление пользователя только когда он «в
-                                фокусе» на сайте
-                            </li>
-                            <li>Аналитика</li>
-                        </ul>
+                        <a
+                                href="https://idle-detection.glitch.me/"
+                                target="_blank"
+                        >
+                            <img
+                                    src="http://qrcoder.ru/code/?https%3A%2F%2Fidle-detection.glitch.me%2F&10&0"
+                                    width="450"
+                                    height="450"
+                                    title="QR код"
+                                    alt="Idle detection demo qr code"
+                            />
+                            <p>Демо</p>
+                        </a>
                     </section>
                     <section>
                         <pre>
@@ -1331,25 +1327,9 @@
                         </pre>
                     </section>
                     <section>
-                        <!-- todo: начать с демо, добавить в демо таймер-->
-                        <a
-                            href="https://codesandbox.io/s/idle-detection-api-demo-k8xkud?file=/src/idle_detection.js"
-                            target="_blank"
-                        >
-                            <img
-                                src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fidle-detection-api-demo-k8xkud%3Ffile%3D%2Fsrc%2Fidle_detection.js&10&0"
-                                width="450"
-                                height="450"
-                                title="QR код"
-                                alt="Idle detection demo qr code"
-                            />
-                            <p>Демо</p>
-                        </a>
-                    </section>
-                    <section>
                         <img
-                            src="img/idle/2.png"
-                            alt="IdleDetection browsers"
+                                src="img/idle/2.png"
+                                alt="IdleDetection browsers"
                         />
                     </section>
                 </section>
@@ -1413,7 +1393,7 @@
                         </pre>
                     </section>
                     <section>
-                    <!-- todo:  переместить коня в декораторы-->
+                        <!-- todo:  переместить коня в декораторы-->
                         <img
                             src="img/wakelock/1.png"
                             alt="конь грустит потому что wakelock не сработал"
@@ -1702,12 +1682,26 @@
                             >
                                 <img
                                     src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fwithout-transitions-058qs1&6&0"
-                                    width="250"
-                                    height="250"
+                                    width="200"
+                                    height="200"
                                     title="QR код"
                                     alt="without transition demo"
                                 />
                                 <p>Без анимации</p>
+                            </a>
+                            <a
+                                href="https://codesandbox.io/s/view-transitions-handle-click-nzi8u4?file=/src/App.js"
+                                target="_blank"
+                                style="margin-left: 20px; margin-right: 20px"
+                            >
+                                <img
+                                    src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fview-transitions-handle-click-nzi8u4%3Ffile%3D%2Fsrc%2FApp.js&4&0"
+                                    width="200"
+                                    height="200"
+                                    title="QR код"
+                                    alt="startViewTransition"
+                                />
+                                <p>startViewTransition()</p>
                             </a>
                             <a
                                 href="https://codesandbox.io/s/view-transitions-warhammer-example-d19lcz"
@@ -1716,40 +1710,14 @@
                             >
                                 <img
                                     src="http://qrcoder.ru/code/?https%3A%2F%2Fcodesandbox.io%2Fs%2Fview-transitions-warhammer-example-d19lcz&6&0"
-                                    width="250"
-                                    height="250"
+                                    width="200"
+                                    height="200"
                                     title="QR код"
                                     alt="without transition demo"
                                 />
                                 <p>С анимацией</p>
                             </a>
                         </div>
-                    </section>
-                    <section>
-                        <!-- todo: перенести это демо третьим куаркодом-->
-                        <pre>
-                             <code class="react"  data-trim data-noescape data-line-numbers="13" >
-                                 const [state, setState] = useState(0);
-
-                                 const generateNumber = () => Math.floor(Math.random() * 100);
-
-                                 const handleGenerateNumber = () => {
-                                    const newNumber = generateRandomNumber();
-
-                                     if(!document.startViewTransition) {
-                                        setState(newNumber);
-                                        return;
-                                     }
-
-                                    document.startViewTransition(() => setState(newNumber));
-                                 };
-                             </code>
-                         </pre>
-                        <a
-                            href="https://codesandbox.io/s/view-transitions-handle-click-nzi8u4?file=/src/App.js"
-                            target="_blank"
-                            >Демо</a
-                        >
                     </section>
                     <section>
                         <div
