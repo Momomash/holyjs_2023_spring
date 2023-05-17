@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
         <!-- todo: Про регурярки - сначала решение, потом проблема -->
-        <!-- todo: рассказать про Interop в конце про автостопом -->
     </head>
     <body>
         <div class="reveal">
@@ -124,82 +123,138 @@
                         </div>
                     </section>
                     <section>
-                        <div class="r-stack">
-                            <div>
-                                <img src="img/ecma.png" alt="tc39" />
-                                <div
-                                    class="fragment"
-                                    style="
-                                        display: flex;
-                                        flex-direction: column;
-                                        align-items: center;
-                                    "
-                                >
-                                    <img src="img/tc39.png" alt="tc39" />
-                                    <a
-                                        href="https://github.com/tc39"
-                                        target="_blank"
-                                        >https://github.com/tc39</a
-                                    >
-                                </div>
-                            </div>
-                            <img class="fragment" src="img/tc39repo.png" />
-                        </div>
+                        <h3>Interop</h3>
                     </section>
                     <section>
-                        <h3 style="margin-bottom: 0">
-                            Жизненный цикл пропоузала
-                        </h3>
-                        <small>(почти как разработка игры)</small>
-                        <table style="font-size: 1.5rem">
-                            <tr class="fragment">
-                                <td style="border: 0">0 - идея 💡</td>
-                                <td style="border: 0">
-                                    Есть проблема -> предложение решения
-                                </td>
-                            </tr>
-                            <tr class="fragment">
-                                <td style="border: 0">1 - предложение</td>
-                                <td style="border: 0">
-                                    <span style="color: greenyellow"
-                                        >Концепт</span
-                                    ><br />
-                                    Обоснование и описание
-                                </td>
-                            </tr>
-                            <tr class="fragment">
-                                <td style="border: 0">2 - черновик</td>
-                                <td style="border: 0">
-                                    <span style="color: greenyellow"
-                                        >Прототип</span
-                                    ><br />
-                                    Формальная реализация спецификации,<br />
-                                    Первая имплементация (babel)
-                                </td>
-                            </tr>
-                            <tr class="fragment">
-                                <td style="border: 0">3- кандидат</td>
-                                <td style="border: 0">
-                                    <span style="color: greenyellow"
-                                        >Бета-тест</span
-                                    ><br />
-                                    Отзызы от разработчиков и браузеров<br />
-                                    Фикс багов
-                                </td>
-                            </tr>
-                            <tr class="fragment">
-                                <td style="border: 0">4- финал</td>
-                                <td style="border: 0">
-                                    <span style="color: greenyellow"
-                                        >Предрелиз</span
-                                    ><br />
-                                    Написаны юнит-тесты (test-262)<br />
-                                    Практический опыт применения <br />
-                                    -> Включение в ближайшую версию языка
-                                </td>
-                            </tr>
-                        </table>
+                        <img
+                            src="img/interop/1.png"
+                            alt="члены interop обсуждают стандартизацию"
+                        />
                     </section>
+                    <section>
+                        <div class="r-stack">
+                            <img src="img/interop/2.png" alt="before interop" />
+                            <img
+                                class="fragment"
+                                src="img/interop/3.png"
+                                alt="after interop"
+                            />
+                            <img
+                                class="fragment"
+                                src="img/interop/4.png"
+                                alt="interop 2023"
+                            />
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <h3>Web APIs</h3>
+                </section>
+                <section>
+                    <img src="img/mdn.png" alt="mdn" />
+                </section>
+                <section>
+                    <div style="display: flex; justify-content: center">
+                        <a
+                            href="https://wicg.io/"
+                            style="
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                            "
+                            ><img
+                                src="img/wicg/1.png"
+                                alt="WICG logo"
+                                style="margin-right: 20px"
+                            />
+                            <p>Web Incubator CG</p></a
+                        >
+                    </div>
+                    <aside class="notes">
+                        Веб инкубатор CG - часть W3С - большого консорциума
+                        интернета
+                    </aside>
+                </section>
+                <section>
+                    <div class="r-stack">
+                        <img src="img/wicg/2.png" alt="wic proposals" />
+                        <img
+                            src="img/wicg/3.png"
+                            class="fragment"
+                            alt="wic proposals"
+                        />
+                    </div>
+                </section>
+                <section>
+                    <div class="r-stack">
+                        <div>
+                            <img src="img/ecma.png" alt="tc39" />
+                            <div
+                                class="fragment"
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                "
+                            >
+                                <img src="img/tc39.png" alt="tc39" />
+                                <a
+                                    href="https://github.com/tc39"
+                                    target="_blank"
+                                    >https://github.com/tc39</a
+                                >
+                            </div>
+                        </div>
+                        <img class="fragment" src="img/tc39repo.png" />
+                    </div>
+                </section>
+                <section>
+                    <h3 style="margin-bottom: 0">Жизненный цикл пропоузала</h3>
+                    <small>(почти как разработка игры)</small>
+                    <table style="font-size: 1.5rem">
+                        <tr class="fragment">
+                            <td style="border: 0">0 - идея 💡</td>
+                            <td style="border: 0">
+                                Есть проблема -> предложение решения
+                            </td>
+                        </tr>
+                        <tr class="fragment">
+                            <td style="border: 0">1 - предложение</td>
+                            <td style="border: 0">
+                                <span style="color: greenyellow">Концепт</span
+                                ><br />
+                                Обоснование и описание
+                            </td>
+                        </tr>
+                        <tr class="fragment">
+                            <td style="border: 0">2 - черновик</td>
+                            <td style="border: 0">
+                                <span style="color: greenyellow">Прототип</span
+                                ><br />
+                                Формальная реализация спецификации,<br />
+                                Первая имплементация (babel)
+                            </td>
+                        </tr>
+                        <tr class="fragment">
+                            <td style="border: 0">3- кандидат</td>
+                            <td style="border: 0">
+                                <span style="color: greenyellow">Бета-тест</span
+                                ><br />
+                                Отзызы от разработчиков и браузеров<br />
+                                Фикс багов
+                            </td>
+                        </tr>
+                        <tr class="fragment">
+                            <td style="border: 0">4- финал</td>
+                            <td style="border: 0">
+                                <span style="color: greenyellow">Предрелиз</span
+                                ><br />
+                                Написаны юнит-тесты (test-262)<br />
+                                Практический опыт применения <br />
+                                -> Включение в ближайшую версию языка
+                            </td>
+                        </tr>
+                    </table>
                 </section>
                 <!--Автостопом по стандартами end -->
 
@@ -1186,42 +1241,7 @@
                 <!--Web APIs start-->
                 <section>
                     <section>
-                        <h3>Не одним JavaScript-ом едины</h3>
-                    </section>
-                    <section>
-                        <img src="img/mdn.png" alt="mdn" />
-                    </section>
-                    <section>
-                        <div style="display: flex; justify-content: center">
-                            <a
-                                href="https://wicg.io/"
-                                style="
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: center;
-                                "
-                                ><img
-                                    src="img/wicg/1.png"
-                                    alt="WICG logo"
-                                    style="margin-right: 20px"
-                                />
-                                <p>Web Incubator CG</p></a
-                            >
-                        </div>
-                        <aside class="notes">
-                            Веб инкубатор CG - часть W3С - большого консорциума
-                            интернета
-                        </aside>
-                    </section>
-                    <section>
-                        <div class="r-stack">
-                            <img src="img/wicg/2.png" alt="wic proposals" />
-                            <img
-                                src="img/wicg/3.png"
-                                class="fragment"
-                                alt="wic proposals"
-                            />
-                        </div>
+                        <h3>Новые Web APIs</h3>
                     </section>
                     <section>
                         <h3 style="color: greenyellow">Дисклеймер</h3>
