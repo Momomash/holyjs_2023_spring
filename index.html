@@ -17,7 +17,6 @@
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
-        <!-- todo: Про регурярки - сначала решение, потом проблема -->
     </head>
     <body>
         <div class="reveal">
@@ -123,68 +122,6 @@
                         </div>
                     </section>
                     <section>
-                        <h3>Interop</h3>
-                    </section>
-                    <section>
-                        <img
-                            src="img/interop/1.png"
-                            alt="члены interop обсуждают стандартизацию"
-                        />
-                    </section>
-                    <section>
-                        <div class="r-stack">
-                            <img src="img/interop/2.png" alt="before interop" />
-                            <img
-                                class="fragment"
-                                src="img/interop/3.png"
-                                alt="after interop"
-                            />
-                            <img
-                                class="fragment"
-                                src="img/interop/4.png"
-                                alt="interop 2023"
-                            />
-                        </div>
-                    </section>
-                    <section>
-                        <h3>Web APIs</h3>
-                    </section>
-                    <section>
-                        <img src="img/mdn.png" alt="mdn" />
-                    </section>
-                    <section>
-                        <div style="display: flex; justify-content: center">
-                            <a
-                                href="https://wicg.io/"
-                                style="
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: center;
-                                "
-                                ><img
-                                    src="img/wicg/1.png"
-                                    alt="WICG logo"
-                                    style="margin-right: 20px"
-                                />
-                                <p>Web Incubator CG</p></a
-                            >
-                        </div>
-                        <aside class="notes">
-                            Веб инкубатор CG - часть W3С - большого консорциума
-                            интернета
-                        </aside>
-                    </section>
-                    <section>
-                        <div class="r-stack">
-                            <img src="img/wicg/2.png" alt="wic proposals" />
-                            <img
-                                src="img/wicg/3.png"
-                                class="fragment"
-                                alt="wic proposals"
-                            />
-                        </div>
-                    </section>
-                    <section>
                         <div class="r-stack">
                             <div>
                                 <img src="img/ecma.png" alt="tc39" />
@@ -260,6 +197,68 @@
                                 </td>
                             </tr>
                         </table>
+                    </section>
+                    <section>
+                        <h3>Web APIs</h3>
+                    </section>
+                    <section>
+                        <img src="img/mdn.png" alt="mdn" />
+                    </section>
+                    <section>
+                        <div style="display: flex; justify-content: center">
+                            <a
+                                    href="https://wicg.io/"
+                                    style="
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                "
+                            ><img
+                                    src="img/wicg/1.png"
+                                    alt="WICG logo"
+                                    style="margin-right: 20px"
+                            />
+                                <p>Web Incubator CG</p></a
+                            >
+                        </div>
+                        <aside class="notes">
+                            Веб инкубатор CG - часть W3С - большого консорциума
+                            интернета
+                        </aside>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img src="img/wicg/2.png" alt="wic proposals" />
+                            <img
+                                    src="img/wicg/3.png"
+                                    class="fragment"
+                                    alt="wic proposals"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Interop</h3>
+                    </section>
+                    <section>
+                        <img
+                                src="img/interop/1.png"
+                                alt="члены interop обсуждают стандартизацию"
+                        />
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img src="img/interop/2.png" alt="before interop" />
+                            <img
+                                    class="fragment"
+                                    src="img/interop/3.png"
+                                    alt="after interop"
+                            />
+                            <img
+                                    class="fragment"
+                                    src="img/interop/4.png"
+                                    alt="interop 2023"
+                            />
+                        </div>
                     </section>
                 </section>
                 <!--Автостопом по стандартами end -->
@@ -469,7 +468,7 @@
                                 <code class="javascript"  data-trim data-noescape data-line-numbers="1|3|5">
                                     const array = [1,2,3];
 
-                                    array.with(2,10); // => [1,10,3]
+                                    array.with(1,10); // => [1,10,3]
 
                                     console.log(array); // => [1,2,3]
                                 </code>
@@ -734,7 +733,7 @@
                     </section>
                     <section>
                         <pre>
-                              <code class="javascript"  data-trim data-noescape data-line-numbers="0|3" >
+                              <code class="javascript"  data-trim data-noescape data-line-numbers="1-4|3|6" >
                                   let game = #{
                                     name: 'Age of Sigmar',
                                     tags: #['wargame', 'Games Workshop', 'Fantasy']
@@ -925,7 +924,7 @@
                     </section>
                     <section>
                         <pre>
-                             <code class="javascript"  data-trim data-noescape>
+                             <code class="javascript"  data-trim data-noescape data-line-numbers="4|5|6|7">
                                  const { dayOfWeek, dayOfYear,daysInMonth,inLeapYear } = date;
 
                                  console.log(
@@ -1210,7 +1209,7 @@
                                 width="450"
                                 height="450"
                                 title="QR код"
-                                alt="Idle detection demo qr code"
+                                alt="decorators demo qr code"
                             />
                             <p>Демо</p>
                         </a>
@@ -1285,43 +1284,6 @@
                             />
                             <p>Демо</p>
                         </a>
-                    </section>
-                    <section>
-                        <pre>
-                            <code class="javascript"  data-trim data-noescape>
-                                const { userState, screenState } = idleDetector();
-                            </code>
-                        </pre>
-                        <table>
-                            <tr>
-                                <td>userState</td>
-                                <td style="color: red; border-color: white">
-                                    idle
-                                </td>
-                                <td
-                                    style="
-                                        color: greenyellow;
-                                        border-color: white;
-                                    "
-                                >
-                                    active
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>screenState</td>
-                                <td style="color: red; border-color: white">
-                                    locked
-                                </td>
-                                <td
-                                    style="
-                                        color: greenyellow;
-                                        border-color: white;
-                                    "
-                                >
-                                    unlocked
-                                </td>
-                            </tr>
-                        </table>
                     </section>
                     <section>
                         <pre>
