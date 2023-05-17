@@ -4,3 +4,37 @@
 .fragment.blur.visible {
     filter: none;
 }
+
+.browsers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.browsers img {
+    width: 100px;
+    height: 100px;
+}
+
+.browsers .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.browsers p {
+    font-weight: bold;
+}
+
+.browsers .green {
+    color: yellowgreen;
+}
+
+.browsers .red {
+    color: red;
+}
+
+.browsers .blue {
+    color: dodgerblue;
+}
